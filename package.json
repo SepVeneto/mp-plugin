@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-starter",
+  "name": "unplugin-mp-router-view",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@7.1.1",
@@ -84,9 +84,14 @@
     "test": "vitest"
   },
   "dependencies": {
+    "debug": "^4.3.4",
+    "jsonc-parser": "^3.2.0",
+    "node-html-parser": "^6.1.4",
     "unplugin": "^1.0.1"
   },
   "devDependencies": {
+    "@dcloudio/types": "^3.0.17",
+    "@types/debug": "^4.1.7",
     "@antfu/eslint-config": "^0.33.1",
     "@types/node": "^18.11.13",
     "bumpp": "^8.2.1",
