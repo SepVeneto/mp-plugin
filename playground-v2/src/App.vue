@@ -1,5 +1,5 @@
 <template>
-  <view-router></view-router>
+  <router-view></router-view>
   <free-login />
 </template>
 <script>
