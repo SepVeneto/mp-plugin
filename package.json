@@ -80,15 +80,16 @@
     "test": "vitest"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "debug": "^4.3.4",
     "jsonc-parser": "^3.2.0",
     "node-html-parser": "^6.1.4",
     "unplugin": "^1.0.1"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.33.1",
     "@dcloudio/types": "^3.0.17",
     "@types/debug": "^4.1.7",
-    "@antfu/eslint-config": "^0.33.1",
     "@types/node": "^18.11.13",
     "bumpp": "^8.2.1",
     "chalk": "^5.2.0",

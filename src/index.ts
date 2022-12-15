@@ -2,13 +2,14 @@ import path from 'node:path'
 import { createUnplugin } from 'unplugin'
 import type { Options } from './types'
 import { addToFooter, addToHeader, genSlotCode, getPages, getTemplate, isAppVue, isEntryPage } from './util'
+export const NAME = 'unplugin-mp-router-view'
 
 export default createUnplugin<Options | undefined>(() => {
   const entryPages = getPages()
   let header: string[] = []
   let footer: string[] = []
   return {
-    name: 'unplugin-starter',
+    name: NAME,
     enforce: 'pre',
     transformInclude(id) {
       const _id = path.resolve(id)

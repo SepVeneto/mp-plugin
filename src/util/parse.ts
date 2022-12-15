@@ -3,6 +3,7 @@ import path from 'node:path'
 import { parse as htmlParse } from 'node-html-parser'
 import { parse } from 'jsonc-parser'
 import type { Page, PageJSON } from '../type'
+import { error } from './error'
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR!
 const viewRouterReg = /<router-view(.*)><\/router-view>/
@@ -64,15 +65,26 @@ export function genSlotCode(tpl: string) {
     }
     flag ? footer.push(dom) : header.push(dom)
   })
-  if (count === 0)
-    console.error(new Error('no'))
-  else if (count > 1)
-    console.error(new Error('more'))
+  if (count === 0) {
+    error('App.vue中不存在<router-view />，跳过代码注入...')
+    // 原则上App.vue中没有router-view标签其余的标签被视为header注入到代码中
+    // 跳过注入是防止误删，或者注释之后出现与预期不一样的情况
+    // 方便及时检查代码
+    return [[], []]
+  } else if (count > 1) {
+    // 只有第一个router-view有分割header和footer的作用
+    // 剩下除router-view的标签会被视为footer的一部分
+    // 非预期的用法
+    error(`App.vue中存在${count}个<router-view />，跳过代码注入...`)
+    return [[], []]
+  }
   return [header, footer]
 }
 
 export function getPages() {
+  // 找不到pages.json的话无法开始编译，所以不考虑文件不存在的情况
   const jsonStr = fs.readFileSync(path.resolve(INPUT_DIR, 'pages.json'), 'utf-8')
+  // 同样，解析异常也无法开始编译
   const pagesJson = parseJson(jsonStr)
   const { pages, subPackages = [] } = pagesJson
   const entryList = [...collectEntry(pages), ...collectEntry(subPackages)]
