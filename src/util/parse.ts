@@ -3,10 +3,16 @@ import path from 'node:path'
 import { parse as htmlParse } from 'node-html-parser'
 import { parse } from 'jsonc-parser'
 import type { Page, PageJSON } from '../type'
-import { error } from './error'
+import { error, log } from './error'
+import type { Level } from './error'
+import { isAppVue, isEntryPage } from './filter'
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR!
 const viewRouterReg = /<router-view(.*)><\/router-view>/
+
+let footer: string[] = []
+let header: string[] = []
+let logLevel: Level = 'error'
 
 export function parseJson(str: string): PageJSON {
   return parse(str)
@@ -66,7 +72,7 @@ export function genSlotCode(tpl: string) {
     flag ? footer.push(dom) : header.push(dom)
   })
   if (count === 0) {
-    error('App.vue中不存在<router-view />，跳过代码注入...')
+    error('App.vue中不存在<router-view />，跳过代码注入...', logLevel)
     // 原则上App.vue中没有router-view标签其余的标签被视为header注入到代码中
     // 跳过注入是防止误删，或者注释之后出现与预期不一样的情况
     // 方便及时检查代码
@@ -75,7 +81,7 @@ export function genSlotCode(tpl: string) {
     // 只有第一个router-view有分割header和footer的作用
     // 剩下除router-view的标签会被视为footer的一部分
     // 非预期的用法
-    error(`App.vue中存在${count}个<router-view />，跳过代码注入...`)
+    error(`App.vue中存在${count}个<router-view />，跳过代码注入...`, logLevel)
     return [[], []]
   }
   return [header, footer]
@@ -106,3 +112,25 @@ function collectEntry(json: { root: string; pages: Page[] }[] | Page[], root = '
   return entryList
 }
 
+export function combineCode(code: string, header: string[], footer: string[]) {
+  code = addToHeader(code, header)
+  code = addToFooter(code, footer)
+  return code
+}
+
+export function transform(path: string, code: string, entryPages: string[], level: Level) {
+  logLevel = level
+  // 由于uniapp的项目结构，位于src下的App.vue必定先触发
+  if (isAppVue(path)) {
+    log(`基于平台${process.env.UNI_PLATFORM}, 处理App.vue...`, logLevel)
+    const { origin, tpl } = getTemplate(code)
+    const [_header, _footer] = genSlotCode(tpl)
+    header = _header
+    footer = _footer
+    return origin
+  } else if (isEntryPage(path, entryPages)) {
+    log(`处理 ${path} ...`, logLevel)
+    code = combineCode(code, header, footer)
+  }
+  return code
+}
