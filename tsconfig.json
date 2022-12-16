@@ -10,5 +10,6 @@
     "resolveJsonModule": true,
     "types": ["@dcloudio/types"],
     "allowJs": true
-  }
+  },
+  "include": ["packages"]
 }
