@@ -1,6 +1,7 @@
 type Page = {
   path: string
   style: Record<string, string>
+  ROUTER_VIEW_EXCLUDE?: boolean
 }
 export interface PageJSON {
   easycom: {

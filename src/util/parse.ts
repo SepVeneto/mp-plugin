@@ -107,7 +107,12 @@ function collectEntry(json: { root: string; pages: Page[] }[] | Page[], root = '
       const _res = collectEntry(item.pages, item.root)
       entryList.push(..._res)
     }
-    else { entryList.push(path.resolve(INPUT_DIR, `${root}${root ? '/' : ''}${item.path}`)) }
+    else {
+      if (item['ROUTER_VIEW_EXCLUDE']) {
+        return
+      }
+      entryList.push(path.resolve(INPUT_DIR, `${root}${root ? '/' : ''}${item.path}`))
+    }
   })
   return entryList
 }

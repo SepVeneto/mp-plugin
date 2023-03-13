@@ -1,5 +1,5 @@
 {
-  "extends": "@antfu",
+  "extends": "@sepveneto",
   "rules": {
     "@typescript-eslint/brace-style": "off"
   }

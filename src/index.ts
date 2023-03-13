@@ -15,7 +15,8 @@ export default createUnplugin<Options | undefined>((options) => {
       return isAppVue(_id) || isEntryPage(_id, entryPages)
     },
     transform(code, id) {
-      return transform(id, code, entryPages, log)
+      const res = transform(path.resolve(id), code, entryPages, log)
+      return res;
     },
   }
 })
