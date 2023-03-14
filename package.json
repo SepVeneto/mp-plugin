@@ -81,9 +81,9 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "debug": "^4.3.4",
     "jsonc-parser": "^3.2.0",
     "node-html-parser": "^6.1.4",
+    "debug": "^4.3.4",
     "unplugin": "^1.0.1"
   },
   "devDependencies": {
@@ -104,5 +104,10 @@
     "vite": "^4.0.0",
     "vitest": "^0.25.7",
     "webpack": "^5.75.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": ["postcss"]
+    }
   }
 }

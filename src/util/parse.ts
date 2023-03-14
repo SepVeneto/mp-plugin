@@ -1,17 +1,18 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { parse as htmlParse } from 'node-html-parser'
+// import { parse as htmlParse } from 'node-html-parser'
 import { parse } from 'jsonc-parser'
 import type { Page, PageJSON } from '../type'
 import { error, log } from './error'
 import type { Level } from './error'
 import { isAppVue, isEntryPage } from './filter'
+import { parse as htmlParse } from '@vue/compiler-dom'
+import { countRouterView } from './filter'
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR!
-const viewRouterReg = /<router-view(.*)><\/router-view>/
 
-let footer: string[] = []
-let header: string[] = []
+let footer = ''
+let header = ''
 let logLevel: Level = 'error'
 
 export function parseJson(str: string): PageJSON {
@@ -19,12 +20,7 @@ export function parseJson(str: string): PageJSON {
 }
 
 const templateReg = /<\/?template>/g
-export function parseNodes(tpl: string) {
-  const code = tpl.replace(templateReg, '')
-  const tagList = htmlParse(code).querySelectorAll('*').toString().split(',')
-  // 清除换行和空格
-  return tagList.map(tag => tag.replace(/\n\s+/g, ''))
-}
+
 // 浏览器端会在App.vue中优先注入uni的template
 // 需要通过反向肯定预查提取出代码中添加的template
 const H5_TPL_REG = /(?<=<\/template>)[\s\S]*<\/template>/
@@ -49,42 +45,14 @@ export function getTemplate(code: string) {
   }
 }
 
-export function addToHeader(code: string, header: string[]) {
-  return code.replace(/<view(.*?)>/, p => p + header.join(''))
-}
-
-export function addToFooter(code: string, footer: string[]) {
-  return code.replace(/(<\/view>)(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer.join('') + p)
-}
-
-export function genSlotCode(tpl: string) {
-  const footer: string[] = []
-  const header: string[] = []
-  const domList = parseNodes(tpl)
-  let flag = false
-  let count = 0
-  domList.forEach((dom) => {
-    if (viewRouterReg.test(dom)) {
-      ++count
-      flag = true
-      return
-    }
-    flag ? footer.push(dom) : header.push(dom)
+export function addToHeader(code: string, header: string) {
+  return code.replace(/<view(.*?)>/, p => {
+    return p + header
   })
-  if (count === 0) {
-    error('App.vue中不存在<router-view />，跳过代码注入...', logLevel)
-    // 原则上App.vue中没有router-view标签其余的标签被视为header注入到代码中
-    // 跳过注入是防止误删，或者注释之后出现与预期不一样的情况
-    // 方便及时检查代码
-    return [[], []]
-  } else if (count > 1) {
-    // 只有第一个router-view有分割header和footer的作用
-    // 剩下除router-view的标签会被视为footer的一部分
-    // 非预期的用法
-    error(`App.vue中存在${count}个<router-view />，跳过代码注入...`, logLevel)
-    return [[], []]
-  }
-  return [header, footer]
+}
+
+export function addToFooter(code: string, footer: string) {
+  return code.replace(/(<\/view>)(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer + p)
 }
 
 export function getPages() {
@@ -117,7 +85,7 @@ function collectEntry(json: { root: string; pages: Page[] }[] | Page[], root = '
   return entryList
 }
 
-export function combineCode(code: string, header: string[], footer: string[]) {
+export function combineCode(code: string, header: string, footer: string) {
   code = addToHeader(code, header)
   code = addToFooter(code, footer)
   return code
@@ -128,10 +96,16 @@ export function transform(path: string, code: string, entryPages: string[], leve
   // 由于uniapp的项目结构，位于src下的App.vue必定先触发
   if (isAppVue(path)) {
     log(`基于平台${process.env.UNI_PLATFORM}, 处理App.vue...`, logLevel)
-    const { origin, tpl } = getTemplate(code)
-    const [_header, _footer] = genSlotCode(tpl)
-    header = _header
-    footer = _footer
+    const { origin } = getTemplate(code)
+    const { count, before, after } = countRouterView(code)
+    if (count === 0) {
+      error('App.vue中不存在<router-view />，跳过代码注入...', logLevel)
+    } else if (count > 1) {
+      error(`App.vue中存在${count}个<router-view />，跳过代码注入...`, logLevel)
+    }
+
+    header = before
+    footer = after
     return origin
   } else if (isEntryPage(path, entryPages)) {
     log(`处理 ${path} ...`, logLevel)

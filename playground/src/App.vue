@@ -18,7 +18,9 @@ onHide(() => {
   <!-- test -->
   <custom-header :tab="value" />
   <!-- test -->
-  <router-view />
+  <view>
+    <router-view />
+  </view>
   <!-- test -->
   <custom-footer />
 </template>
