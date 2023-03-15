@@ -1,4 +1,3 @@
-import { NodeTypes } from '@vue/compiler-dom'
 import { parse, compileTemplate } from '@vue/compiler-sfc'
 
 export function isAppVue(id: string) {
@@ -23,7 +22,8 @@ export function countRouterView(code: string) {
   let count = 0
 
   function traverse(node: any) {
-    if (node.type === NodeTypes?.COMMENT ?? 3) return
+    /** NodeTypes.COMMENT */
+    if (node.type === 3) return
 
     if (node.children && node.children.length > 0) {
       node.children.forEach((ele: any) => {
