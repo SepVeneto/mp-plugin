@@ -8,6 +8,7 @@ import type { Level } from './error'
 import { isAppVue, isEntryPage } from './filter'
 import { parse as htmlParse } from '@vue/compiler-dom'
 import { countRouterView } from './filter'
+import type { Options } from '../types'
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR!
 
@@ -55,31 +56,41 @@ export function addToFooter(code: string, footer: string) {
   return code.replace(/(<\/view>)(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer + p)
 }
 
-export function getPages() {
+export function getPages(collectMode: Options['collect']) {
   // 找不到pages.json的话无法开始编译，所以不考虑文件不存在的情况
   const jsonStr = fs.readFileSync(path.resolve(INPUT_DIR, 'pages.json'), 'utf-8')
   // 同样，解析异常也无法开始编译
   const pagesJson = parseJson(jsonStr)
   const { pages, subPackages = [] } = pagesJson
-  const entryList = [...collectEntry(pages), ...collectEntry(subPackages)]
+  const entryList = [...collectEntry(collectMode, pages), ...collectEntry(collectMode, subPackages)]
   return entryList
 }
 
-function collectEntry(json: Page[], root?: string): string[]
-function collectEntry(json: { root: string; pages: Page[] }[]): string[]
-function collectEntry(json: { root: string; pages: Page[] }[] | Page[], root = '') {
+function collectEntry(collectMode: Options['collect'], json: Page[], root?: string): string[]
+function collectEntry(collectMode: Options['collect'], json: { root: string; pages: Page[] }[]): string[]
+function collectEntry(collectMode: Options['collect'], json: { root: string; pages: Page[] }[] | Page[], root = '') {
   const entryList: string[] = []
   json.forEach((item) => {
     // Is subpackages
     if ('root' in item) {
-      const _res = collectEntry(item.pages, item.root)
+      const _res = collectEntry(collectMode, item.pages, item.root)
       entryList.push(..._res)
     }
     else {
-      if (item['ROUTER_VIEW_EXCLUDE']) {
+      if (!collectMode) {
         return
       }
-      entryList.push(path.resolve(INPUT_DIR, `${root}${root ? '/' : ''}${item.path}`))
+      const _path = path.resolve(INPUT_DIR, `${root}${root ? '/' : ''}${item.path}`)
+      if (collectMode && typeof collectMode === 'boolean' && !item['ROUTER_VIEW_EXCLUDE']) {
+        entryList.push(_path)
+      } else if (typeof collectMode === 'string' && item[collectMode]) {
+        entryList.push(_path)
+      } else if (typeof collectMode === 'function' && collectMode(_path)) {
+        entryList.push(_path)
+      } else {
+        error('没有符合条件的文件。', 'log')
+        return
+      }
     }
   })
   return entryList

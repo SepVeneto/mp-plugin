@@ -23,9 +23,9 @@ export function countRouterView(code: string) {
   let count = 0
 
   function traverse(node: any) {
-    if (node.type === NodeTypes.COMMENT) return
+    if (node.type === NodeTypes?.COMMENT ?? 3) return
 
-    if (node.children.length > 0) {
+    if (node.children && node.children.length > 0) {
       node.children.forEach((ele: any) => {
         const res = traverse(ele)
         if (res) {

@@ -5,8 +5,8 @@ import { getPages, isAppVue, isEntryPage, transform } from './util'
 export const NAME = 'unplugin-mp-router-view'
 
 export default createUnplugin<Options | undefined>((options) => {
-  const entryPages = getPages()
   const log = options?.log ?? 'error'
+  const entryPages = getPages(options?.collect ?? true)
   return {
     name: NAME,
     enforce: 'pre',
