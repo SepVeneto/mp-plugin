@@ -1,61 +1,38 @@
-# unplugin-mp-router-view
+# @sepveneto/mp-plugin-router-view
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-starter?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-starter)
+在小程序端实现`vue-router`的基本功能
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+## 限制
+只能写在`App.vue`中，有且只能有一个`<router-view />`。
 
-## Template Usage
+不需要根标签。
 
-To use this template, clone it down using:
+## 快速开始
 
+### 安装
 ```bash
-npx degit antfu/unplugin-starter my-unplugin
+npm i @sepvenet/plugin-mp-router-view
+yarn add @sepvenet/plugin-mp-router-view
+pnpm i @sepvenet/plugin-mp-router-view
 ```
 
-And do a global replace of `unplugin-starter` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
-
-## Install
-
-```bash
-npm i unplugin-starter
-```
+### 使用
 
 <details>
 <summary>Vite</summary><br>
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-starter/vite'
+import PluginRouterView from '@sepveneto/plugin-mp-router-view/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    PluginRouterView ({ /* options */ }),
   ],
 })
 ```
 
 Example: [`playground/`](./playground/)
-
-<br></details>
-
-<details>
-<summary>Rollup</summary><br>
-
-```ts
-// rollup.config.js
-import Starter from 'unplugin-starter/rollup'
-
-export default {
-  plugins: [
-    Starter({ /* options */ }),
-  ],
-}
-```
 
 <br></details>
 
@@ -68,26 +45,10 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-starter/webpack')({ /* options */ })
+    require('@sepveneto/plugin-mp-router-view/webpack')({ /* options */ })
   ]
 }
 ```
-
-<br></details>
-
-<details>
-<summary>Nuxt</summary><br>
-
-```ts
-// nuxt.config.js
-export default {
-  buildModules: [
-    ['unplugin-starter/nuxt', { /* options */ }],
-  ],
-}
-```
-
-> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
 
 <br></details>
 
@@ -99,7 +60,7 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-starter/webpack')({ /* options */ }),
+      require('@sepveneto/plugin-mp-router-view/webpack')({ /* options */ }),
     ],
   },
 }
@@ -121,3 +82,12 @@ build({
 ```
 
 <br></details>
+
+
+## 开发
+
+```bash
+pnpm i
+
+pnpm play # 测试插件效果
+```

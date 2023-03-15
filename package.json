@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-mp-router-view",
+  "name": "@sepveneto/plugin-mp-router-view",
   "type": "module",
   "version": "0.2.4",
   "packageManager": "pnpm@7.1.1",
@@ -75,7 +75,7 @@
     "play": "npm -C playground run dev",
     "play:v2": "npm -C playground-v2 run dev:mp-weixin",
     "prepublishOnly": "npm run build",
-    "release": "bumpp && npm publish",
+    "release": "bumpp",
     "start": "esno src/index.ts",
     "test": "vitest"
   },
