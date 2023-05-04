@@ -24,22 +24,15 @@ const templateReg = /<\/?template>/g
 
 // 浏览器端会在App.vue中优先注入uni的template
 // 需要通过反向肯定预查提取出代码中添加的template
-const H5_TPL_REG = /(?<=<\/template>)[\s\S]*<\/template>/
+// const H5_TPL_REG = /(?<=<\/template>)[\s\S]*<\/template>/
 const TPL_REG = /<template>[\s\S]+<\/template>/
 export function getTemplate(code: string) {
   let tpl = ''
   let origin = ''
-  if (process.env.UNI_PLATFORM === 'h5') {
-    origin = code.replace(H5_TPL_REG, (p) => {
-      tpl = p
-      return ''
-    }).match(TPL_REG)?.[0] ?? code
-  } else {
-    origin = code.replace(TPL_REG, (p) => {
-      tpl = p
-      return ''
-    })
-  }
+  origin = code.replace(TPL_REG, (p) => {
+    tpl = p
+    return ''
+  })
   return {
     origin,
     tpl,
