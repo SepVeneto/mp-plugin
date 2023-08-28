@@ -11,9 +11,9 @@
 
 ### 安装
 ```bash
-npm i @sepvenet/plugin-mp-router-view
-yarn add @sepvenet/plugin-mp-router-view
-pnpm i @sepvenet/plugin-mp-router-view
+npm i @sepveneto/plugin-mp-router-view
+yarn add @sepveneto/plugin-mp-router-view
+pnpm i @sepveneto/plugin-mp-router-view
 ```
 
 ### 使用
