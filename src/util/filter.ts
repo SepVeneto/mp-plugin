@@ -27,13 +27,7 @@ export function countRouterView(code: string) {
 
     if (node.children && node.children.length > 0) {
       node.children.forEach((ele: any) => {
-        const res = traverse(ele)
-        if (res) {
-          const start = ele.loc.start.offset - node.loc.start.offset
-          const end = ele.loc.end.offset - node.loc.start.offset
-          before += (node.loc.source as string).substring(0, start)
-          after += node.loc.source.substring(end)
-        }
+         traverse(ele)
       })
       return;
     }
