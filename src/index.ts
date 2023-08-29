@@ -1,10 +1,11 @@
 import path from 'node:path'
+import type { UnpluginFactory } from 'unplugin'
 import { createUnplugin } from 'unplugin'
 import type { Options } from './types'
 import { getPages, isAppVue, isEntryPage, transform } from './util'
 export const NAME = 'unplugin-mp-router-view'
 
-export default createUnplugin<Options | undefined>((options) => {
+export const unpluginFactory: UnpluginFactory<Options | undefined> = options => {
   const log = options?.log ?? 'error'
   const entryPages = getPages(options?.collect ?? true)
   return {
@@ -19,4 +20,8 @@ export default createUnplugin<Options | undefined>((options) => {
       return res;
     },
   }
-})
+}
+
+export const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory)
+
+export default unplugin
