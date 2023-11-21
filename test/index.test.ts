@@ -16,4 +16,12 @@ describe('example', () => {
     const code = normalizeCode(res)
     expect(code).toEqual(normalize)
   })
+  it('with children', () => {
+    const normalize = '<view><GlobalConfig><text>home</text></GlobalConfig></view>'
+
+    transform('App.vue', getAppVue('NodeChildren'), [], 'log')
+    const res = transform('home.vue', getAppVue('NodeChildren', 'home.vue'), ['home'], 'log')
+    const code = normalizeCode(res)
+    expect(code).toEqual(normalize)
+  })
 })
