@@ -1,7 +1,7 @@
 {
   "name": "@sepveneto/plugin-mp-router-view",
   "type": "module",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "packageManager": "pnpm@7.1.1",
   "description": "Register global imports on demand for Vite and Webpack",
   "license": "MIT",
