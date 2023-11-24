@@ -19,6 +19,25 @@ pnpm i @sepveneto/plugin-mp-router-view
 ### 使用
 
 <details>
+<summary>UniApp v2</summary><br>
+
+```js
+module.exports = {
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('@sepveneto/plugin-mp-router-view/loader')
+      .loader('@sepveneto/plugin-mp-router-view/loader')
+      .options({ /* options */ })
+      .end()
+  }
+}
+```
+#### 为什么
+虽然uniapp的v2版本是依赖`webpack4/5`进行构建，但是通过`plugins`注入的代码无法影响到uniapp的编译结果。因此参考[uniapp-router-view-loader](https://github.com/2460392754/uniapp-router-view-loader)使用loader来实现vue2版本的代码注入。
+<br></details>
+
+<details>
 <summary>Vite</summary><br>
 
 ```ts
