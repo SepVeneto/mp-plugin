@@ -40,13 +40,13 @@ export function getTemplate(code: string) {
 }
 
 export function addToHeader(code: string, header: string) {
-  return code.replace(/<view(.*?)>/, p => {
+  return code.replace(/<template(.*?)>/, p => {
     return p + header
   })
 }
 
 export function addToFooter(code: string, footer: string) {
-  return code.replace(/(<\/view>)(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer + p)
+  return code.replace(/(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer + p)
 }
 
 export function getPages(collectMode: Options['collect']) {

@@ -1,4 +1,6 @@
 <template>
-  <router-view></router-view>
-  <PrivacyPopup class="global" />
+  <view>
+    <router-view></router-view>
+    <PrivacyPopup class="global" />
+  </view>
 </template>
