@@ -11,6 +11,5 @@ export default defineConfig({
   },
   plugins: [Inspect(), Unplugin({
     log: 'log',
-    collect: 'include'
   }) as Plugin, uni()],
 })

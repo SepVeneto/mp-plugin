@@ -6,9 +6,13 @@ import type { Page, PageJSON } from '../type'
 import { error, log } from './error'
 import type { Level } from './error'
 import { isAppVue, isEntryPage } from './filter'
-import { parse as htmlParse } from '@vue/compiler-dom'
 import { countRouterView } from './filter'
 import type { Options } from '../types'
+import { getPackageInfoSync } from 'local-pkg'
+
+const vue = getPackageInfoSync('vue')
+const [, version] = vue?.version?.match(/(\d+)\.(?:\d+)\.(?:.+)/) ?? []
+const isVue2 = version === '2'
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR!
 
@@ -20,19 +24,25 @@ export function parseJson(str: string): PageJSON {
   return parse(str)
 }
 
-const templateReg = /<\/?template>/g
-
 // 浏览器端会在App.vue中优先注入uni的template
 // 需要通过反向肯定预查提取出代码中添加的template
-// const H5_TPL_REG = /(?<=<\/template>)[\s\S]*<\/template>/
+const H5_TPL_REG = /(?<=<\/template>)[\s\S]*<\/template>/
 const TPL_REG = /<template>[\s\S]+<\/template>/
 export function getTemplate(code: string) {
   let tpl = ''
   let origin = ''
-  origin = code.replace(TPL_REG, (p) => {
-    tpl = p
-    return ''
-  })
+  if (process.env.UNI_PLATFORM === 'h5' && isVue2) {
+    const _origin = code.replace(H5_TPL_REG, (p) => {
+      tpl = p
+      return ''
+    }).match(TPL_REG)?.[0] ?? code
+    origin = code.replace(TPL_REG, _origin)
+  } else {
+    origin = code.replace(TPL_REG, (p) => {
+      tpl = p
+      return ''
+    })
+  }
   return {
     origin,
     tpl,
@@ -100,8 +110,8 @@ export function transform(path: string, code: string, entryPages: string[], leve
   // 由于uniapp的项目结构，位于src下的App.vue必定先触发
   if (isAppVue(path)) {
     log(`基于平台${process.env.UNI_PLATFORM}, 处理App.vue...`, logLevel)
-    const { origin } = getTemplate(code)
-    const { count, before, after } = countRouterView(code)
+    const { origin, tpl } = getTemplate(code)
+    const { count, before, after } = countRouterView(tpl)
     if (count === 0) {
       error('App.vue中不存在<router-view />，跳过代码注入...', logLevel)
     } else if (count > 1) {

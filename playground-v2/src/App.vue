@@ -1,6 +1,8 @@
 <template>
-  <router-view></router-view>
-  <free-login />
+  <view>
+    <router-view></router-view>
+    <free-login />
+  </view>
 </template>
 <script>
 	export default {
