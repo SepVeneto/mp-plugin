@@ -10,7 +10,10 @@ import { countRouterView } from './filter'
 import type { Options } from '../types'
 import { getPackageInfoSync } from 'local-pkg'
 
-const vue = getPackageInfoSync('vue')
+const ROOT_PATH = process.cwd()
+const vue = getPackageInfoSync('vue', {
+  paths: [ROOT_PATH.endsWith('/') ? ROOT_PATH : `${ROOT_PATH}/}`]
+})
 const [, version] = vue?.version?.match(/(\d+)\.(?:\d+)\.(?:.+)/) ?? []
 const isVue2 = version === '2'
 
