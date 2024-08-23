@@ -10,5 +10,6 @@
     "resolveJsonModule": true,
     "types": ["@dcloudio/types"],
     "allowJs": true
-  }
+  },
+  "exclude": ["dist", "playground-v2", "playground"]
 }

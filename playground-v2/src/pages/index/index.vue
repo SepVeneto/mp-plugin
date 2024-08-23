@@ -1,22 +1,21 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view>
+  <text class="title"> {{ phone.substr(0, 3) + "****" + phone.substr(7)
+      }}
+    </text>
+  </view>
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+        phone: '13212345678'
 			}
 		},
 		onLoad() {
-
+      debugger
 		},
 		methods: {
 

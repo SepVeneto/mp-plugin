@@ -54,6 +54,7 @@ export function countRouterView(code: string) {
   return {
     count,
     after,
-    before,
+    // 不添加空格在uniapp v2中会导致换行的模板字符串不能正常解析
+    before: ' ' + before,
   }
 }

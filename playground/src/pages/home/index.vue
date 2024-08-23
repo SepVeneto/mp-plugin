@@ -2,7 +2,12 @@
   <view class="content">
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
-      <text class="title">{{ title }}</text>
+      <text class="title">
+						{{ phone.substr(0, 3) +
+									"****" +
+									phone.substr(7)
+							}}
+      </text>
     </view>
   </view>
 </template>
@@ -10,6 +15,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const title = ref('Hello')
+const phone = ref('13212345678')
 </script>
 
 <style>
