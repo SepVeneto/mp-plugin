@@ -1,10 +1,10 @@
-name: Publish RouterView to NPM registry
+name: Publish DispatchComp to NPM registry
 
 on:
   workflow_dispatch:
   push:
     tags:
-      - 'router-view@*'
+      - 'dispatch-comp@*'
 
 jobs:
   # Publish to NPM repository
@@ -42,7 +42,7 @@ jobs:
         run: echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" >> ./.npmrc
 
       - name: Build and Publish
-        run: cd packages/RouterView && sh ./scripts/publish.sh
+        run: cd packages/DispatchComp && sh ./scripts/publish.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

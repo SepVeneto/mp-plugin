@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      bumpp:
+        specifier: ^8.2.1
+        version: 8.2.1
 
   packages/DispatchComp:
     dependencies:
@@ -140,6 +144,9 @@ importers:
       '@dcloudio/uni-stat':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722003
+      '@sepveneto/plugin-uni-dispatch-comp':
+        specifier: ../
+        version: link:..
       '@vue/shared':
         specifier: ^3.0.0
         version: 3.5.7
