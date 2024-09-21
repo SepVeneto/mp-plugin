@@ -11,5 +11,5 @@
     "types": ["@dcloudio/types"],
     "allowJs": true
   },
-  "exclude": ["dist", "playground-v2", "playground"]
+  "exclude": ["packages/**/dist", "packages/**/playground-v2", "packages/**/playground"]
 }
