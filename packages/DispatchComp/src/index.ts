@@ -62,10 +62,16 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = options => 
 
             insertCode = `require('${vendorRelativePath}');`;
           }
-          // if (options?.copyAll.test(item.sourceRef)) {
 
-          // }
-          addCompChunk(assets, origin, target, insertCode);
+          const copyDirReg = options?.copyDir || /node_modules|uni_modules/
+          if (copyDirReg.test(origin)) {
+            addCompChunks(assets, origin, target, insertCode);
+          } else {
+            addCompChunk(assets, origin, target, '.js', insertCode);
+            addCompChunk(assets, origin, target, '.json');
+            addCompChunk(assets, origin, target, postFix.html);
+            addCompChunk(assets, origin, target, postFix.css);
+          }
         }
       }
 
@@ -92,6 +98,32 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = options => 
         return { dir: folderList.join('/'), file: filename }
       }
       function addCompChunk(
+        assets: Record<string, any>,
+        origin: string,
+        target: string,
+        postfix: string,
+        insertCode = '',
+      ) {
+        /**
+        * assets 的 keys 列表示例，可以看到没有前面的 `/`
+        *
+        * [
+        *   "views/sche/cycle-set.wxml",
+        *   "views/match-detail/publish-news.wxml",
+        *   "wxcomponents/vant/mixins/basic.d.ts",
+        *   "local-component/module/tip-match/tip-match-detail-group-qrcode/index.json",
+        * ]
+        */
+        if (assets[origin + postfix]) {
+          let source = assets[origin + postfix].source().toString();
+          if (postfix === '.js' && !source.startsWith(insertCode)) {
+            source = `${insertCode}${source}`;
+          }
+          updateAssetSource(assets, target + postfix, source);
+        }
+      }
+
+      function addCompChunks(
         assets: Record<string, any>,
         origin: string,
         target: string,
