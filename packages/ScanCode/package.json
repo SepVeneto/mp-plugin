@@ -1,9 +1,13 @@
 {
   "name": "@sepveneto/uniapp-plugin-scancode",
-  "version": "0.0.18",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/bundle.js",
-  "files": ["dist", "scripts", "README.md"],
+  "files": [
+    "dist",
+    "scripts",
+    "README.md"
+  ],
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
     "release": "bumpp -t scan-code@",
