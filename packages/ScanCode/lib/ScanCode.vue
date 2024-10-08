@@ -158,7 +158,6 @@ export default {
     scaning(startTime = Date.now()) {
       const current = Date.now()
       const delta = current - startTime
-      console.log('delta', delta)
 
       const width = this.width
       const height = this.height
