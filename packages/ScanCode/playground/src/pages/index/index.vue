@@ -20,6 +20,7 @@
 		methods: {
       handleClick() {
         uni.scanCode({
+          scanType: ['barCode'],
           success(res) {
             console.log(res)
           }

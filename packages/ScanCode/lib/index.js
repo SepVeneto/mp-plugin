@@ -53,6 +53,10 @@ export function install(app) {
     router.push({
       type: 'navigateTo',
       path: '/scan-code',
+      query: {
+        onlyFromCamera: options.onlyFromCamera || '',
+        scanType: options.scanType,
+      },
     })
   }
   app.component('ScanCode', ScanCode)
