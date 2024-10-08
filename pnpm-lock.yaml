@@ -136,7 +136,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/uni-quickapp-native':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@4.47.0)
+        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))
       '@dcloudio/uni-quickapp-webview':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -194,7 +194,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/vue-cli-plugin-uni':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@4.47.0))(postcss@8.4.47)
+        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0(esbuild@0.16.17)))(postcss@8.4.47)
       '@dcloudio/vue-cli-plugin-uni-optimize':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -209,10 +209,10 @@ importers:
         version: 0.8.1(miniprogram-ci@2.0.9(eslint@8.57.1))
       '@vue/cli-plugin-babel':
         specifier: ~5.0.0
-        version: 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)
+        version: 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)
       '@vue/cli-service':
         specifier: ~5.0.0
-        version: 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+        version: 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       babel-plugin-import:
         specifier: ^1.11.0
         version: 1.13.8
@@ -230,7 +230,7 @@ importers:
         version: 1.69.7
       sass-loader:
         specifier: '9'
-        version: 9.0.3(sass@1.69.7)(webpack@4.47.0)
+        version: 9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17))
       vue-template-compiler:
         specifier: '>= 2.6.14 < 2.7'
         version: 2.6.14(vue@2.6.14)
@@ -390,6 +390,9 @@ importers:
       rollup-plugin-vue:
         specifier: ^5.0.0
         version: 5.1.9(lodash@4.17.21)(mustache@3.2.1)(postcss@8.4.47)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))
+      stats.js:
+        specifier: ^0.17.0
+        version: 0.17.0
       vue:
         specifier: '>= 2.6.14 < 2.7'
         version: 2.6.14
@@ -443,7 +446,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/uni-quickapp-native':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)
+        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@4.47.0)
       '@dcloudio/uni-quickapp-webview':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -495,7 +498,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/vue-cli-plugin-uni':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0))(postcss@8.4.47)
+        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@4.47.0))(postcss@8.4.47)
       '@dcloudio/vue-cli-plugin-uni-optimize':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -4737,6 +4740,7 @@ packages:
 
   chokidar@2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
+    deprecated: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -6130,6 +6134,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   esno@0.16.3:
@@ -6477,7 +6482,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -9152,7 +9157,7 @@ packages:
   puppeteer@3.3.0:
     resolution: {integrity: sha512-23zNqRltZ1PPoK28uRefWJ/zKb5Jhnzbbwbpcna2o5+QMn17F0khq5s1bdH3vPlyj+J36pubccR8wiNA/VE0Vw==}
     engines: {node: '>=10.18.1'}
-    deprecated: < 22.8.2 is no longer supported
+    deprecated: < 21.8.0 is no longer supported
 
   qr-image@3.2.0:
     resolution: {integrity: sha512-rXKDS5Sx3YipVsqmlMJsJsk6jXylEpiHRC2+nJy66fxA5ExYyGa4PqwteW69SaVmAb2OQ18HbYriT7cGQMbduw==}
@@ -9870,6 +9875,9 @@ packages:
   static-extend@0.1.2:
     resolution: {integrity: sha512-72E9+uLc27Mt718pMHt9VMNiAL4LMsmDbBva8mxWUCkT07fSzEGMYUCk0XWY6lp0j6RBAG4cJ3mWuZv2OE3s0g==}
     engines: {node: '>=0.10.0'}
+
+  stats.js@0.17.0:
+    resolution: {integrity: sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==}
 
   statuses@1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
@@ -13667,9 +13675,9 @@ snapshots:
       - webpack-command
       - whiskers
 
-  '@dcloudio/uni-quickapp-native@2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)':
+  '@dcloudio/uni-quickapp-native@2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))':
     dependencies:
-      '@hap-toolkit/dsl-vue': 0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)
+      '@hap-toolkit/dsl-vue': 0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))
       '@hap-toolkit/packager': 0.6.13
       '@hap-toolkit/server': 0.6.13
       module-alias: 2.2.3
@@ -13850,12 +13858,12 @@ snapshots:
       wrap-loader: 0.2.0
       xregexp: 4.0.0
 
-  '@dcloudio/vue-cli-plugin-uni@2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0))(postcss@8.4.47)':
+  '@dcloudio/vue-cli-plugin-uni@2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0(esbuild@0.16.17)))(postcss@8.4.47)':
     dependencies:
       '@dcloudio/uni-stat': 2.0.2-4020420240722004
       buffer-json: 2.0.0
       clone-deep: 4.0.1
-      copy-webpack-plugin: 9.1.0(webpack@5.95.0)
+      copy-webpack-plugin: 9.1.0(webpack@5.95.0(esbuild@0.16.17))
       cross-env: 5.2.1
       envinfo: 6.0.1
       hash-sum: 1.0.2
@@ -14222,16 +14230,16 @@ snapshots:
       - webpack-command
       - whiskers
 
-  '@hap-toolkit/dsl-vue@0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)':
+  '@hap-toolkit/dsl-vue@0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))':
     dependencies:
       '@hap-toolkit/compiler': 0.6.15
       '@hap-toolkit/packager': 0.6.13
       '@hap-toolkit/shared-utils': 0.6.15
-      css-loader: 2.1.1(webpack@5.95.0)
+      css-loader: 2.1.1(webpack@5.95.0(esbuild@0.16.17))
       md5: 2.3.0
-      mini-css-extract-plugin: 0.5.0(webpack@5.95.0)
-      url-loader: 2.3.0(webpack@5.95.0)
-      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0)
+      mini-css-extract-plugin: 0.5.0(webpack@5.95.0(esbuild@0.16.17))
+      url-loader: 2.3.0(webpack@5.95.0(esbuild@0.16.17))
+      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17))
       vue-template-compiler: 2.6.14(vue@2.6.14)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
@@ -14684,7 +14692,7 @@ snapshots:
       core-js: 3.38.1
       jpeg-js: 0.3.7
 
-  '@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3)':
+  '@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
@@ -14698,7 +14706,7 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3)':
+  '@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
@@ -14726,7 +14734,7 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3)':
+  '@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
@@ -14742,13 +14750,13 @@ snapshots:
       core-js: 3.38.1
       tinycolor2: 1.6.0
 
-  '@jimp/plugin-contain@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))':
+  '@jimp/plugin-contain@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
+      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -14762,13 +14770,13 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-cover@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))':
+  '@jimp/plugin-cover@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
+      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -14782,7 +14790,7 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3)':
+  '@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
@@ -14838,11 +14846,11 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-flip@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))':
+  '@jimp/plugin-flip@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-rotate': 0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
+      '@jimp/plugin-rotate': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -14910,11 +14918,11 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-print@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(debug@4.3.7)':
+  '@jimp/plugin-print@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(debug@4.3.7)':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
       load-bmfont: 1.4.2(debug@4.3.7)
@@ -14932,7 +14940,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)':
+  '@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
@@ -14946,13 +14954,13 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))':
+  '@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -14966,11 +14974,11 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))':
+  '@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -14982,12 +14990,12 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-shadow@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))':
+  '@jimp/plugin-shadow@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-blur': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-blur': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -15000,12 +15008,12 @@ snapshots:
       '@jimp/utils': 0.9.8
       core-js: 3.38.1
 
-  '@jimp/plugin-threshold@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))':
+  '@jimp/plugin-threshold@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))':
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-color': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-color': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/utils': 0.10.3
       core-js: 3.38.1
 
@@ -15022,27 +15030,27 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.25.7
       '@jimp/custom': 0.10.3(debug@4.3.7)
-      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-blur': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-blit': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-blur': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-circle': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
-      '@jimp/plugin-color': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-contain': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))
-      '@jimp/plugin-cover': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))
-      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3)
+      '@jimp/plugin-color': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-contain': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))
+      '@jimp/plugin-cover': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-scale@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))
+      '@jimp/plugin-crop': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-displace': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-dither': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-fisheye': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
-      '@jimp/plugin-flip': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3)))
+      '@jimp/plugin-flip': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-rotate@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7))))
       '@jimp/plugin-gaussian': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-invert': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-mask': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
       '@jimp/plugin-normalize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
-      '@jimp/plugin-print': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(debug@4.3.7)
-      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3)
-      '@jimp/plugin-rotate': 0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
-      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3)(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
-      '@jimp/plugin-shadow': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
-      '@jimp/plugin-threshold': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3))
+      '@jimp/plugin-print': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(debug@4.3.7)
+      '@jimp/plugin-resize': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))
+      '@jimp/plugin-rotate': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blit@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-crop@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
+      '@jimp/plugin-scale': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
+      '@jimp/plugin-shadow': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-blur@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
+      '@jimp/plugin-threshold': 0.10.3(@jimp/custom@0.10.3(debug@4.3.7))(@jimp/plugin-color@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))(@jimp/plugin-resize@0.10.3(@jimp/custom@0.10.3(debug@4.3.7)))
       core-js: 3.38.1
       timm: 1.7.1
     transitivePeerDependencies:
@@ -15814,11 +15822,11 @@ snapshots:
 
   '@vue/cli-overlay@5.0.8': {}
 
-  '@vue/cli-plugin-babel@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)':
+  '@vue/cli-plugin-babel@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)':
     dependencies:
       '@babel/core': 7.25.7
       '@vue/babel-preset-app': 5.0.8(@babel/core@7.25.7)(core-js@3.38.1)(vue@2.6.14)
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       '@vue/cli-shared-utils': 5.0.8
       babel-loader: 8.4.1(@babel/core@7.25.7)(webpack@5.95.0(esbuild@0.16.17))
       thread-loader: 3.0.4(webpack@5.95.0(esbuild@0.16.17))
@@ -15852,9 +15860,9 @@ snapshots:
       - vue
       - webpack-cli
 
-  '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+  '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       '@vue/cli-shared-utils': 5.0.8
     transitivePeerDependencies:
       - encoding
@@ -15866,23 +15874,23 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+  '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
 
   '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
       '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
 
-  '@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)':
+  '@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)':
     dependencies:
       '@babel/helper-compilation-targets': 7.25.7
       '@soda/friendly-errors-webpack-plugin': 1.8.1(webpack@5.95.0(esbuild@0.16.17))
       '@soda/get-current-script': 1.0.2
       '@types/minimist': 1.2.5
       '@vue/cli-overlay': 5.0.8
-      '@vue/cli-plugin-router': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
-      '@vue/cli-plugin-vuex': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-plugin-router': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-plugin-vuex': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
       '@vue/cli-shared-utils': 5.0.8
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)
       '@vue/vue-loader-v15': vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@6.11.0(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17))
@@ -15932,7 +15940,7 @@ snapshots:
       webpack-virtual-modules: 0.4.6
       whatwg-fetch: 3.6.20
     optionalDependencies:
-      sass-loader: 9.0.3(sass@1.69.7)(webpack@4.47.0)
+      sass-loader: 9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17))
       vue-template-compiler: 2.6.14(vue@2.6.14)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -18489,7 +18497,7 @@ snapshots:
       schema-utils: 1.0.0
       webpack: 4.47.0
 
-  css-loader@2.1.1(webpack@5.95.0):
+  css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
       camelcase: 5.3.1
       icss-utils: 4.1.1
@@ -18502,7 +18510,7 @@ snapshots:
       postcss-modules-values: 2.0.0
       postcss-value-parser: 3.3.1
       schema-utils: 1.0.0
-      webpack: 5.95.0
+      webpack: 5.95.0(esbuild@0.16.17)
 
   css-loader@6.11.0(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
@@ -21882,11 +21890,11 @@ snapshots:
       webpack: 4.47.0
       webpack-sources: 1.4.3
 
-  mini-css-extract-plugin@0.5.0(webpack@5.95.0):
+  mini-css-extract-plugin@0.5.0(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
       loader-utils: 1.4.2
       schema-utils: 1.0.0
-      webpack: 5.95.0
+      webpack: 5.95.0(esbuild@0.16.17)
       webpack-sources: 1.4.3
 
   mini-css-extract-plugin@2.9.1(webpack@5.95.0(esbuild@0.16.17)):
@@ -23832,14 +23840,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0):
+  sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
       klona: 1.1.2
       loader-utils: 2.0.4
       neo-async: 2.6.2
       schema-utils: 2.7.1
       semver: 7.6.3
-      webpack: 4.47.0
+      webpack: 5.95.0(esbuild@0.16.17)
     optionalDependencies:
       sass: 1.69.7
 
@@ -24257,6 +24265,8 @@ snapshots:
     dependencies:
       define-property: 0.2.5
       object-copy: 0.1.0
+
+  stats.js@0.17.0: {}
 
   statuses@1.5.0: {}
 
@@ -24984,12 +24994,12 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 4.47.0
 
-  url-loader@2.3.0(webpack@5.95.0):
+  url-loader@2.3.0(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
       loader-utils: 1.4.2
       mime: 2.6.0
       schema-utils: 2.7.1
-      webpack: 5.95.0
+      webpack: 5.95.0(esbuild@0.16.17)
 
   url-parse-lax@3.0.0:
     dependencies:
@@ -25210,15 +25220,15 @@ snapshots:
       - walrus
       - whiskers
 
-  vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0):
+  vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)
-      css-loader: 2.1.1(webpack@5.95.0)
+      css-loader: 2.1.1(webpack@5.95.0(esbuild@0.16.17))
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      webpack: 5.95.0
+      webpack: 5.95.0(esbuild@0.16.17)
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.11
       vue-template-compiler: 2.6.14(vue@2.6.14)
