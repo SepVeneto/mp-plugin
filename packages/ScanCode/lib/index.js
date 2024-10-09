@@ -14,35 +14,6 @@ function initEventChannel (events, cache = true) {
 }
 
 export function install(app) {
-  window.addEventListener('load', () => {
-    getApp().$router.addRoutes(
-      [{
-        path: '/scan-code',
-        component: {
-          render (createElement) {
-            return createElement(
-              'Page',
-              {
-                props:{
-                  navigationStyle:'custom'
-                }
-              },
-              [
-                createElement('ScanCode', {
-                  slot: 'page'
-                })
-              ]
-            )
-          }
-        },
-        meta:{
-          name:'scan-code',
-          pagePath:'/scan-code'
-        }
-      }]
-    )
-  })
-
   uni.scanCode = (options = {}) => {
     const router = getApp().$router
     router.$eventChannel = initEventChannel({

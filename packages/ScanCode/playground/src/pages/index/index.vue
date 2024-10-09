@@ -15,7 +15,8 @@
 			}
 		},
 		onLoad() {
-
+      console.log('trigger load')
+      debugger
 		},
 		methods: {
       handleClick() {

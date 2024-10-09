@@ -24,12 +24,6 @@
 </template>
 
 <script>
-import {
-  readBarcodesFromImageData,
-  readBarcodesFromImageFile,
-  getZXingModule,
-} from 'zxing-wasm'
-
 let moveOffset = 100
 const SPEED = 100
 const HEIGHT = 10
@@ -37,24 +31,24 @@ let pts = 0
 let checkCount = 0
 
 const workerScript = `
-self.importScripts('https://cdn.jsdelivr.net/npm/zxing-wasm@1.2.12/dist/iife/full/index.js')
-console.log('worker start')
+const STATIC_JS = 'https://registry.npmmirror.com/zxing-wasm/1.2.12/files/dist/iife/full/index.js'
+self.importScripts('UNIAPP_PLUGIN_SCANCODE_REMOTE_JS' || STATIC_JS)
 
 ZXingWASM.getZXingModule({
   locateFile: (path, prefix) => {
     if (path.endsWith('.wasm')) {
       const url = self.location.origin + '/' + path
-      return url
+      return 'UNIAPP_PLUGIN_SCANCODE_REMOTE_WASM' || url
     }
     return prefix + path
   }
 })
 
 self.onmessage = (evt) => {
-  const { type, data } = evt.data
+  const { type, data, options } = evt.data
   switch (type) {
     case 'scan':
-      ZXingWASM.readBarcodesFromImageData(data, { formats: []}).then(res => {
+      ZXingWASM.readBarcodesFromImageData(data, options).then(res => {
         if (res.length === 0) {
           return
         }
@@ -62,7 +56,7 @@ self.onmessage = (evt) => {
       })
       break
     case 'file':
-      ZXingWASM.readBarcodesFromImageFile(data).then(res => {
+      ZXingWASM.readBarcodesFromImageFile(data, options).then(res => {
         if (res.length === 0) {
           return
         }
@@ -91,6 +85,7 @@ export default {
       frameHandler: null,
       stats: null,
       worker: null,
+      lock: false,
     }
   },
   onLoad(options) {
@@ -108,15 +103,6 @@ export default {
     this.normalizeOptions(options)
 
     this.event = this.getOpenerEventChannel();
-    // getZXingModule({
-    //   locateFile: (path, prefix) => {
-    //     if (path.endsWith('.wasm')) {
-    //       const url = `${window.location.origin}/${path}`
-    //       return url
-    //     }
-    //     return prefix + path
-    //   }
-    // })
   },
   mounted() {
     // this.stats = new Stats()
@@ -182,18 +168,18 @@ export default {
     drawBounding(location) {
       const ctx = this.ctx
       const {
-        bottomLeftCorner,
-        bottomRightCorner,
-        topLeftCorner,
+        bottomLeft,
+        bottomRight,
+        topLeft,
       } = location
 
-      const centerX = bottomLeftCorner.x + (bottomRightCorner.x - bottomLeftCorner.x) / 2
-      const centerY = topLeftCorner.y + (bottomLeftCorner.y - topLeftCorner.y) / 2
+      const centerX = bottomLeft.x + (bottomRight.x - bottomLeft.x) / 2 - 5
+      const centerY = topLeft.y + (bottomLeft.y - topLeft.y) / 2 - 5
 
       ctx.fillStyle = 'rgb(122,114,231)'
       ctx.strokeStyle = 'rgba(122,114,231)'
       ctx.beginPath()
-      ctx.arc(centerX, centerY, 20, 0, Math.PI * 2)
+      ctx.arc(centerX, centerY, 10, 0, Math.PI * 2)
       ctx.stroke()
       ctx.fill()
     },
@@ -209,14 +195,12 @@ export default {
     },
 
     scaning(ts) {
+      if (this.lock) return
+
       this.frameHandler = window.requestAnimationFrame(this.scaning)
       const delta = ts - pts
-      // if (delta < 1000 / 60) {
-      //   return
-      // }
 
       // this.stats.begin()
-
 
       const width = this.width
       const height = this.height
@@ -227,36 +211,37 @@ export default {
       this.draw(delta)
       pts = ts
 
-      // console.log('real', Math.floor(1000 / delta))
+      // this.stats.end()
+
       if (++checkCount < 30) {
         return
       }
       checkCount = 0
 
-      this.worker.postMessage({ type: 'scan', data: img })
-
-      // readBarcodesFromImageData(img, {
-      //   formats: this.formats,
-      //   // TODO: 当一次识别出多个时，允许选择
-      //   maxNumberOfSymbols: 1,
-      // }).then(res => {
-      //   if (Array.isArray(res) ? res.length === 0 : res.scanType === 'None') return
-
-      //   this.emitRes(res)
-      //   uni.navigateBack()
-      // }).catch(err => {
-      //   console.log(err)
-      // })
-
-      // this.stats.end()
+      this.worker.postMessage({ type: 'scan', data: img, options: {
+        formats: this.formats
+      } })
     },
     onUnload() {
+      this.mediaStop()
       window.cancelAnimationFrame(this.frameHandler)
     },
     emitRes(res) {
+      if (this.lock) return
+
+      this.lock = true
       const _res = Array.isArray(res) ? res[0] : res
       this.event.emit('onScanRes', normalizeResult(_res))
-      uni.navigateBack()
+      this.drawBounding(_res.position)
+
+      setTimeout(() => {
+        uni.navigateBack()
+      }, 1000)
+    },
+    mediaStop() {
+      this.videoObj.srcObject.getTracks().forEach(track => {
+        track.readyState === 'live' && track.stop()
+      })
     },
     handleClose() {
       uni.navigateBack()
@@ -267,26 +252,11 @@ export default {
         sourceType: ['album'],
         success: async (res) => {
           this.readFromAlbum(res.tempFiles[0])
-          // if (Array.isArray(_res) ? _res.length === 0 : _res.scanType === 'None') {
-          //   uni.showToast({
-          //     title: '识别失败',
-          //     icon: 'error',
-          //   })
-          // } else {
-          //   this.emitRes(_res)
-          //   uni.navigateBack()
-          // }
         }
       })
     },
     async readFromAlbum(file) {
       this.worker.postMessage({ type: 'file', data: file })
-      // const res = await readBarcodesFromImageFile(file, {
-      //   formats: this.formats,
-      //   // TODO: 当一次识别出多个时，允许选择
-      //   maxNumberOfSymbols: 1,
-      // })
-      // return res
     }
   }
 }

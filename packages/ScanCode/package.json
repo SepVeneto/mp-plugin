@@ -1,13 +1,25 @@
 {
   "name": "@sepveneto/uniapp-plugin-scancode",
-  "version": "0.1.8",
+  "version": "0.1.9-alpha.9",
   "description": "",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "scripts",
     "README.md"
   ],
+  "exports": {
+    ".": {
+      "default": "./dist/cjs/index.js",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./loader": {
+      "default": "./dist/cjs/loader.js",
+      "import": "./dist/es/loader.js",
+      "require": "./dist/cjs/loader.js"
+    }
+  },
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
     "release": "bumpp -t scan-code@",

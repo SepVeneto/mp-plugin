@@ -2,11 +2,14 @@ import vue from 'rollup-plugin-vue'
 import { defineConfig } from 'rollup'
 
 export default defineConfig({
-  input: './lib/index.js',
-  output: {
-    file: 'dist/bundle.js',
+  input: ['./lib/index.js', './lib/loader.js'],
+  output: [{
+    dir: 'dist/cjs',
     format: 'cjs',
-  },
+  }, {
+    dir: 'dist/es',
+    format: 'es'
+  }],
   plugins: [
     vue()
   ]

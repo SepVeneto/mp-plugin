@@ -16,6 +16,9 @@ npm i @sepveneto/uniapp-plugin-scancode
 ```
 
 ### 使用
+<details>
+<summary>main.js</summary><br>
+
 ```js
 import Vue from 'vue'
 // #ifdef H5
@@ -23,8 +26,32 @@ import ScanCode from '@sepveneto/uniapp-plugin-scancode'
 Vue.use(ScanCode)
 // #endif
 ```
+<br></details>
 
 由于使用后是直接在uni上创建一个`scanCode`，因此对于多平台的项目，需要通过条件编码来兼容。
+
+<details>
+<summary>vue.config.js</summary><br>
+
+```js
+module.exports = {
+  chainWebpack: config => {
+    config.module
+      .rule('uniapp-pages')
+      .test(/\.js/)
+      .use('@sepveneto/uniapp-plugin-scancode')
+      .loader('@sepveneto/uniapp-plugin-scancode/loader')
+      .options({
+        remote: {
+          js: 'https://cdn.jsdelivr.net/npm/zxing-wasm@1.2.12/dist/iife/full/index.js',
+          wasm: 'https://registry.npmmirror.com/zxing-wasm/1.2.12/files/dist/full/zxing_full.wasm'
+        }
+      })
+  }
+}
+```
+<br></details>
+
 
 ### 参数说明
 
