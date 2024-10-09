@@ -134,6 +134,47 @@ export default {
       }
     }).then(stream => {
       this.videoObj.srcObject = stream
+    }).catch(err => {
+      if (err instanceof DOMException) {
+        switch (err.name) {
+          case 'NotAllowedError':
+            uni.showToast({
+              title: '请检查摄像头是否授权',
+              icon: 'error'
+            })
+            break
+          case 'NotReadableError':
+            uni.showToast({
+              title: '找不到摄像头',
+              icon: 'error'
+            })
+            break
+          case 'OverconstrainedError':
+            uni.showToast({
+              title: '摄像头分辨率过低',
+              icon: 'error'
+            })
+            break
+          case 'SecurityError':
+            uni.showToast({
+              title: '安全错误',
+              icon: 'error'
+            })
+            break
+          default:
+            uni.showToast({
+              title: '未知错误',
+              icon: 'error'
+            })
+        }
+        console.error(`${err.name}: ${err.message}`)
+      } else {
+        uni.showToast({
+          title: '摄像头调用失败',
+          icon: 'error',
+        })
+        console.error(err)
+      }
     })
   },
   methods: {
