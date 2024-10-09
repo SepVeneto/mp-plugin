@@ -1,6 +1,6 @@
 {
   "name": "@sepveneto/uniapp-plugin-scancode",
-  "version": "0.1.9-alpha.9",
+  "version": "0.1.9",
   "description": "",
   "main": "dist/index.js",
   "files": [
