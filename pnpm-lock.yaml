@@ -14,6 +14,227 @@ importers:
         specifier: ^8.2.1
         version: 8.2.1
 
+  packages/AsyncComp:
+    dependencies:
+      colors:
+        specifier: ^1.4.0
+        version: 1.4.0
+      debug:
+        specifier: ^4.3.4
+        version: 4.3.7
+      jsonc-parser:
+        specifier: ^3.2.0
+        version: 3.3.1
+      node-html-parser:
+        specifier: ^6.1.4
+        version: 6.1.13
+      unplugin:
+        specifier: ^1.4.0
+        version: 1.14.1(webpack-sources@3.2.3)
+    devDependencies:
+      '@antfu/eslint-config':
+        specifier: ^0.33.1
+        version: 0.33.1(eslint@8.57.1)(typescript@4.9.5)
+      '@dcloudio/types':
+        specifier: ^3.0.17
+        version: 3.4.12
+      '@types/debug':
+        specifier: ^4.1.7
+        version: 4.1.12
+      '@types/node':
+        specifier: ^18.11.13
+        version: 18.19.54
+      bumpp:
+        specifier: ^8.2.1
+        version: 8.2.1
+      chalk:
+        specifier: ^5.2.0
+        version: 5.3.0
+      eslint:
+        specifier: ^8.29.0
+        version: 8.57.1
+      esno:
+        specifier: ^0.16.3
+        version: 0.16.3
+      fast-glob:
+        specifier: ^3.2.12
+        version: 3.3.2
+      local-pkg:
+        specifier: ^0.5.0
+        version: 0.5.0
+      nodemon:
+        specifier: ^2.0.20
+        version: 2.0.22
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      rollup:
+        specifier: ^3.7.3
+        version: 3.29.5
+      tsup:
+        specifier: ^6.5.0
+        version: 6.7.0(@swc/core@1.4.14)(postcss@8.4.47)(typescript@4.9.5)
+      typescript:
+        specifier: ^4.9.4
+        version: 4.9.5
+      vite:
+        specifier: ^4.0.0
+        version: 4.5.5(@types/node@18.19.54)(less@4.2.0)(sass@1.69.7)(stylus@0.54.8)(terser@5.34.1)
+      vitest:
+        specifier: ^0.25.7
+        version: 0.25.8(jsdom@15.2.1)(less@4.2.0)(sass@1.69.7)(stylus@0.54.8)(terser@5.34.1)
+      webpack:
+        specifier: ^5.75.0
+        version: 5.95.0(@swc/core@1.4.14)
+
+  packages/AsyncComp/playground-v2:
+    dependencies:
+      '@dcloudio/uni-app':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004(@dcloudio/types@3.4.12)(@vue/composition-api@1.7.2(vue@2.6.14))
+      '@dcloudio/uni-app-plus':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-h5':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-i18n':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-360':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-alipay':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-baidu':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-jd':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-kuaishou':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-lark':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-qq':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-toutiao':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-vue':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-weixin':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-mp-xhs':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-quickapp-native':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)
+      '@dcloudio/uni-quickapp-webview':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-stacktracey':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-stat':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@sepveneto/plugin-uni-dispatch-comp':
+        specifier: ../
+        version: link:..
+      '@vue/shared':
+        specifier: ^3.0.0
+        version: 3.5.11
+      core-js:
+        specifier: ^3.8.3
+        version: 3.38.1
+      flyio:
+        specifier: ^0.6.2
+        version: 0.6.14
+      uview-ui:
+        specifier: ^2.0.37
+        version: 2.0.37
+      vue:
+        specifier: '>= 2.6.14 < 2.7'
+        version: 2.6.14
+      vuex:
+        specifier: ^3.2.0
+        version: 3.6.2(vue@2.6.14)
+    devDependencies:
+      '@dcloudio/types':
+        specifier: ^3.3.2
+        version: 3.4.12
+      '@dcloudio/uni-automator':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004(adbkit@2.11.1)(node-simctl@6.6.0)(puppeteer@3.3.0)
+      '@dcloudio/uni-cli-i18n':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-cli-shared':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-helper-json':
+        specifier: '*'
+        version: 1.0.13
+      '@dcloudio/uni-migration':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/uni-template-compiler':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004(vue@2.6.14)
+      '@dcloudio/vue-cli-plugin-hbuilderx':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/vue-cli-plugin-uni':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0))(postcss@8.4.47)
+      '@dcloudio/vue-cli-plugin-uni-optimize':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/webpack-uni-mp-loader':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@dcloudio/webpack-uni-pages-loader':
+        specifier: ^2.0.2-4020420240722003
+        version: 2.0.2-4020420240722004
+      '@rx-frontend/uni-cli':
+        specifier: ^0.8.1
+        version: 0.8.1(miniprogram-ci@2.0.9(eslint@8.57.1))
+      '@vue/cli-plugin-babel':
+        specifier: ~5.0.0
+        version: 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(vue@2.6.14)
+      '@vue/cli-service':
+        specifier: ~5.0.0
+        version: 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      babel-plugin-import:
+        specifier: ^1.11.0
+        version: 1.13.8
+      cross-env:
+        specifier: ^7.0.2
+        version: 7.0.3
+      jest:
+        specifier: ^25.4.0
+        version: 25.5.4
+      postcss-comment:
+        specifier: ^2.0.0
+        version: 2.0.0
+      sass:
+        specifier: ~1.69.2
+        version: 1.69.7
+      sass-loader:
+        specifier: '9'
+        version: 9.0.3(sass@1.69.7)(webpack@5.95.0)
+      vue-template-compiler:
+        specifier: '>= 2.6.14 < 2.7'
+        version: 2.6.14(vue@2.6.14)
+
   packages/DispatchComp:
     dependencies:
       colors:
@@ -136,7 +357,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/uni-quickapp-native':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))
+        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@4.47.0)
       '@dcloudio/uni-quickapp-webview':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -194,7 +415,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/vue-cli-plugin-uni':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0(esbuild@0.16.17)))(postcss@8.4.47)
+        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@4.47.0))(postcss@8.4.47)
       '@dcloudio/vue-cli-plugin-uni-optimize':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -209,10 +430,10 @@ importers:
         version: 0.8.1(miniprogram-ci@2.0.9(eslint@8.57.1))
       '@vue/cli-plugin-babel':
         specifier: ~5.0.0
-        version: 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)
+        version: 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)
       '@vue/cli-service':
         specifier: ~5.0.0
-        version: 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+        version: 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       babel-plugin-import:
         specifier: ^1.11.0
         version: 1.13.8
@@ -230,7 +451,7 @@ importers:
         version: 1.69.7
       sass-loader:
         specifier: '9'
-        version: 9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17))
+        version: 9.0.3(sass@1.69.7)(webpack@4.47.0)
       vue-template-compiler:
         specifier: '>= 2.6.14 < 2.7'
         version: 2.6.14(vue@2.6.14)
@@ -446,7 +667,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/uni-quickapp-native':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@4.47.0)
+        version: 2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)
       '@dcloudio/uni-quickapp-webview':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -501,7 +722,7 @@ importers:
         version: 2.0.2-4020420240722004
       '@dcloudio/vue-cli-plugin-uni':
         specifier: ^2.0.2-4020420240722003
-        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@4.47.0))(postcss@8.4.47)
+        version: 2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0))(postcss@8.4.47)
       '@dcloudio/vue-cli-plugin-uni-optimize':
         specifier: ^2.0.2-4020420240722003
         version: 2.0.2-4020420240722004
@@ -6489,7 +6710,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -13688,9 +13909,9 @@ snapshots:
       - webpack-command
       - whiskers
 
-  '@dcloudio/uni-quickapp-native@2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))':
+  '@dcloudio/uni-quickapp-native@2.0.2-4020420240722004(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)':
     dependencies:
-      '@hap-toolkit/dsl-vue': 0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))
+      '@hap-toolkit/dsl-vue': 0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)
       '@hap-toolkit/packager': 0.6.13
       '@hap-toolkit/server': 0.6.13
       module-alias: 2.2.3
@@ -13871,12 +14092,12 @@ snapshots:
       wrap-loader: 0.2.0
       xregexp: 4.0.0
 
-  '@dcloudio/vue-cli-plugin-uni@2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0(esbuild@0.16.17)))(postcss@8.4.47)':
+  '@dcloudio/vue-cli-plugin-uni@2.0.2-4020420240722004(copy-webpack-plugin@9.1.0(webpack@5.95.0))(postcss@8.4.47)':
     dependencies:
       '@dcloudio/uni-stat': 2.0.2-4020420240722004
       buffer-json: 2.0.0
       clone-deep: 4.0.1
-      copy-webpack-plugin: 9.1.0(webpack@5.95.0(esbuild@0.16.17))
+      copy-webpack-plugin: 9.1.0(webpack@5.95.0)
       cross-env: 5.2.1
       envinfo: 6.0.1
       hash-sum: 1.0.2
@@ -14243,16 +14464,16 @@ snapshots:
       - webpack-command
       - whiskers
 
-  '@hap-toolkit/dsl-vue@0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0(esbuild@0.16.17))':
+  '@hap-toolkit/dsl-vue@0.6.13(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue@2.6.14)(webpack@5.95.0)':
     dependencies:
       '@hap-toolkit/compiler': 0.6.15
       '@hap-toolkit/packager': 0.6.13
       '@hap-toolkit/shared-utils': 0.6.15
-      css-loader: 2.1.1(webpack@5.95.0(esbuild@0.16.17))
+      css-loader: 2.1.1(webpack@5.95.0)
       md5: 2.3.0
-      mini-css-extract-plugin: 0.5.0(webpack@5.95.0(esbuild@0.16.17))
-      url-loader: 2.3.0(webpack@5.95.0(esbuild@0.16.17))
-      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17))
+      mini-css-extract-plugin: 0.5.0(webpack@5.95.0)
+      url-loader: 2.3.0(webpack@5.95.0)
+      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0)
       vue-template-compiler: 2.6.14(vue@2.6.14)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
@@ -15835,15 +16056,34 @@ snapshots:
 
   '@vue/cli-overlay@5.0.8': {}
 
-  '@vue/cli-plugin-babel@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)':
+  '@vue/cli-plugin-babel@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(esbuild@0.16.17)(vue@2.6.14)':
     dependencies:
       '@babel/core': 7.25.7
       '@vue/babel-preset-app': 5.0.8(@babel/core@7.25.7)(core-js@3.38.1)(vue@2.6.14)
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       '@vue/cli-shared-utils': 5.0.8
       babel-loader: 8.4.1(@babel/core@7.25.7)(webpack@5.95.0(esbuild@0.16.17))
       thread-loader: 3.0.4(webpack@5.95.0(esbuild@0.16.17))
       webpack: 5.95.0(esbuild@0.16.17)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - core-js
+      - encoding
+      - esbuild
+      - supports-color
+      - uglify-js
+      - vue
+      - webpack-cli
+
+  '@vue/cli-plugin-babel@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))(core-js@3.38.1)(vue@2.6.14)':
+    dependencies:
+      '@babel/core': 7.25.7
+      '@vue/babel-preset-app': 5.0.8(@babel/core@7.25.7)(core-js@3.38.1)(vue@2.6.14)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-shared-utils': 5.0.8
+      babel-loader: 8.4.1(@babel/core@7.25.7)(webpack@5.95.0)
+      thread-loader: 3.0.4(webpack@5.95.0)
+      webpack: 5.95.0
     transitivePeerDependencies:
       - '@swc/core'
       - core-js
@@ -15873,9 +16113,16 @@ snapshots:
       - vue
       - webpack-cli
 
-  '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+  '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-shared-utils': 5.0.8
+    transitivePeerDependencies:
+      - encoding
+
+  '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+    dependencies:
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
       '@vue/cli-shared-utils': 5.0.8
     transitivePeerDependencies:
       - encoding
@@ -15887,23 +16134,27 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+  '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
-      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
+
+  '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
+    dependencies:
+      '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
 
   '@vue/cli-plugin-vuex@5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))':
     dependencies:
       '@vue/cli-service': 5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)
 
-  '@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)':
+  '@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)':
     dependencies:
       '@babel/helper-compilation-targets': 7.25.7
       '@soda/friendly-errors-webpack-plugin': 1.8.1(webpack@5.95.0(esbuild@0.16.17))
       '@soda/get-current-script': 1.0.2
       '@types/minimist': 1.2.5
       '@vue/cli-overlay': 5.0.8
-      '@vue/cli-plugin-router': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
-      '@vue/cli-plugin-vuex': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-plugin-router': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-plugin-vuex': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(esbuild@0.16.17)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
       '@vue/cli-shared-utils': 5.0.8
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)
       '@vue/vue-loader-v15': vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@6.11.0(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17))
@@ -15953,7 +16204,138 @@ snapshots:
       webpack-virtual-modules: 0.4.6
       whatwg-fetch: 3.6.20
     optionalDependencies:
-      sass-loader: 9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17))
+      sass-loader: 9.0.3(sass@1.69.7)(webpack@4.47.0)
+      vue-template-compiler: 2.6.14(vue@2.6.14)
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - '@parcel/css'
+      - '@rspack/core'
+      - '@swc/core'
+      - '@vue/compiler-sfc'
+      - arc-templates
+      - atpl
+      - babel-core
+      - bracket-template
+      - bufferutil
+      - clean-css
+      - coffee-script
+      - csso
+      - dot
+      - dust
+      - dustjs-helpers
+      - dustjs-linkedin
+      - eco
+      - ect
+      - ejs
+      - encoding
+      - esbuild
+      - haml-coffee
+      - hamlet
+      - hamljs
+      - handlebars
+      - hogan.js
+      - htmling
+      - jade
+      - jazz
+      - jqtpl
+      - just
+      - liquid-node
+      - liquor
+      - lodash
+      - marko
+      - mote
+      - mustache
+      - nunjucks
+      - plates
+      - prettier
+      - pug
+      - qejs
+      - ractive
+      - razor-tmpl
+      - react
+      - react-dom
+      - slm
+      - squirrelly
+      - supports-color
+      - swig
+      - swig-templates
+      - teacup
+      - templayed
+      - then-jade
+      - then-pug
+      - tinyliquid
+      - toffee
+      - twig
+      - twing
+      - uglify-js
+      - underscore
+      - utf-8-validate
+      - vash
+      - velocityjs
+      - vue
+      - walrus
+      - webpack-cli
+      - whiskers
+
+  '@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3)':
+    dependencies:
+      '@babel/helper-compilation-targets': 7.25.7
+      '@soda/friendly-errors-webpack-plugin': 1.8.1(webpack@5.95.0)
+      '@soda/get-current-script': 1.0.2
+      '@types/minimist': 1.2.5
+      '@vue/cli-overlay': 5.0.8
+      '@vue/cli-plugin-router': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-plugin-vuex': 5.0.8(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.11)(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0))(vue-template-compiler@2.6.14(vue@2.6.14))(vue@2.6.14)(webpack-sources@3.2.3))
+      '@vue/cli-shared-utils': 5.0.8
+      '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)
+      '@vue/vue-loader-v15': vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@6.11.0(webpack@5.95.0))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0)
+      '@vue/web-component-wrapper': 1.3.0
+      acorn: 8.12.1
+      acorn-walk: 8.3.4
+      address: 1.2.2
+      autoprefixer: 10.4.20(postcss@8.4.47)
+      browserslist: 4.24.0
+      case-sensitive-paths-webpack-plugin: 2.4.0
+      cli-highlight: 2.1.11
+      clipboardy: 2.3.0
+      cliui: 7.0.4
+      copy-webpack-plugin: 9.1.0(webpack@5.95.0)
+      css-loader: 6.11.0(webpack@5.95.0)
+      css-minimizer-webpack-plugin: 3.4.1(webpack@5.95.0)
+      cssnano: 5.1.15(postcss@8.4.47)
+      debug: 4.3.7
+      default-gateway: 6.0.3
+      dotenv: 10.0.0
+      dotenv-expand: 5.1.0
+      fs-extra: 9.1.0
+      globby: 11.1.0
+      hash-sum: 2.0.0
+      html-webpack-plugin: 5.6.0(webpack@5.95.0)
+      is-file-esm: 1.0.0
+      launch-editor-middleware: 2.9.1
+      lodash.defaultsdeep: 4.6.1
+      lodash.mapvalues: 4.6.0
+      mini-css-extract-plugin: 2.9.1(webpack@5.95.0)
+      minimist: 1.2.8
+      module-alias: 2.2.3
+      portfinder: 1.0.32
+      postcss: 8.4.47
+      postcss-loader: 6.2.1(postcss@8.4.47)(webpack@5.95.0)
+      progress-webpack-plugin: 1.0.16(webpack@5.95.0)
+      ssri: 8.0.1
+      terser-webpack-plugin: 5.3.10(webpack@5.95.0)
+      thread-loader: 3.0.4(webpack@5.95.0)
+      vue-loader: 17.4.2(@vue/compiler-sfc@3.5.11)(vue@2.6.14)(webpack@5.95.0)
+      vue-style-loader: 4.1.3
+      webpack: 5.95.0
+      webpack-bundle-analyzer: 4.10.2
+      webpack-chain: 6.5.1
+      webpack-dev-server: 4.15.2(debug@4.3.7)(webpack@5.95.0)
+      webpack-merge: 5.10.0
+      webpack-virtual-modules: 0.4.6
+      whatwg-fetch: 3.6.20
+    optionalDependencies:
+      sass-loader: 9.0.3(sass@1.69.7)(webpack@5.95.0)
       vue-template-compiler: 2.6.14(vue@2.6.14)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -18512,7 +18894,7 @@ snapshots:
       schema-utils: 1.0.0
       webpack: 4.47.0
 
-  css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)):
+  css-loader@2.1.1(webpack@5.95.0):
     dependencies:
       camelcase: 5.3.1
       icss-utils: 4.1.1
@@ -18525,7 +18907,7 @@ snapshots:
       postcss-modules-values: 2.0.0
       postcss-value-parser: 3.3.1
       schema-utils: 1.0.0
-      webpack: 5.95.0(esbuild@0.16.17)
+      webpack: 5.95.0
 
   css-loader@6.11.0(webpack@5.95.0(esbuild@0.16.17)):
     dependencies:
@@ -21905,11 +22287,11 @@ snapshots:
       webpack: 4.47.0
       webpack-sources: 1.4.3
 
-  mini-css-extract-plugin@0.5.0(webpack@5.95.0(esbuild@0.16.17)):
+  mini-css-extract-plugin@0.5.0(webpack@5.95.0):
     dependencies:
       loader-utils: 1.4.2
       schema-utils: 1.0.0
-      webpack: 5.95.0(esbuild@0.16.17)
+      webpack: 5.95.0
       webpack-sources: 1.4.3
 
   mini-css-extract-plugin@2.9.1(webpack@5.95.0(esbuild@0.16.17)):
@@ -23857,14 +24239,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0(esbuild@0.16.17)):
+  sass-loader@9.0.3(sass@1.69.7)(webpack@4.47.0):
     dependencies:
       klona: 1.1.2
       loader-utils: 2.0.4
       neo-async: 2.6.2
       schema-utils: 2.7.1
       semver: 7.6.3
-      webpack: 5.95.0(esbuild@0.16.17)
+      webpack: 4.47.0
+    optionalDependencies:
+      sass: 1.69.7
+
+  sass-loader@9.0.3(sass@1.69.7)(webpack@5.95.0):
+    dependencies:
+      klona: 1.1.2
+      loader-utils: 2.0.4
+      neo-async: 2.6.2
+      schema-utils: 2.7.1
+      semver: 7.6.3
+      webpack: 5.95.0
     optionalDependencies:
       sass: 1.69.7
 
@@ -25011,12 +25404,12 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 4.47.0
 
-  url-loader@2.3.0(webpack@5.95.0(esbuild@0.16.17)):
+  url-loader@2.3.0(webpack@5.95.0):
     dependencies:
       loader-utils: 1.4.2
       mime: 2.6.0
       schema-utils: 2.7.1
-      webpack: 5.95.0(esbuild@0.16.17)
+      webpack: 5.95.0
 
   url-parse-lax@3.0.0:
     dependencies:
@@ -25244,15 +25637,15 @@ snapshots:
       - walrus
       - whiskers
 
-  vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0(esbuild@0.16.17)))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0(esbuild@0.16.17)):
+  vue-loader@15.11.1(@vue/compiler-sfc@3.5.11)(css-loader@2.1.1(webpack@5.95.0))(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)(vue-template-compiler@2.6.14(vue@2.6.14))(webpack@5.95.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(mustache@3.2.1)(pug@3.0.3)
-      css-loader: 2.1.1(webpack@5.95.0(esbuild@0.16.17))
+      css-loader: 2.1.1(webpack@5.95.0)
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      webpack: 5.95.0(esbuild@0.16.17)
+      webpack: 5.95.0
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.11
       vue-template-compiler: 2.6.14(vue@2.6.14)
