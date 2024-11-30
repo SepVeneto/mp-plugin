@@ -27,16 +27,19 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = options => 
       compiler.hooks.emit.tap('moveComponentPlugin', (comilation) => {
         // 预计会输出的所有文件
         const assets = comilation.assets
+        const pages = assets['app.json'].source()
+        console.log(pages)
+        debugger
 
-        const {
-          parsedReplaceRefList,
-          movingComponents
-        } = analyzeComponent() || {}
-        if (!movingComponents || !parsedReplaceRefList) return
+        // const {
+        //   parsedReplaceRefList,
+        //   movingComponents
+        // } = analyzeComponent() || {}
+        // if (!movingComponents || !parsedReplaceRefList) return
 
-        copyComponents(assets, movingComponents)
-        modifyRef(assets, parsedReplaceRefList)
-        deleteComponents(assets, movingComponents)
+        // copyComponents(assets, movingComponents)
+        // modifyRef(assets, parsedReplaceRefList)
+        // deleteComponents(assets, movingComponents)
 
       })
 

@@ -1045,9 +1045,9 @@
     stricter-htmlparser2 "^3.9.6"
 
 "@dcloudio/uni-mp-360@^2.0.2-4020420240722003":
-  version "2.0.2-4020420240722004"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-360/-/uni-mp-360-2.0.2-4020420240722004.tgz#abd1dc5a9a18af7d588aba969eb2e406d9d96f92"
-  integrity sha512-lZYx70vOAcgNLP+i72lL0YtR6t7UvME6bXlW9tiW4IoMZ1x72oPPzFkotd8+O4U1UUYr6RVjwaFnt21fIWs9Tg==
+  version "2.0.2-4030620241128001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-360/-/uni-mp-360-2.0.2-4030620241128001.tgz#62d3ba9bbd06043e60c41906fb926b643ba52587"
+  integrity sha512-5XhXx82e+LeKw0F7pk5ui5jz6yAq364w1l2G8vevcvUwpEZyxG2QGaRvBretl0RhwArJpmy8hm9EnfFjQKMnqQ==
 
 "@dcloudio/uni-mp-alipay@^2.0.2-4020420240722003":
   version "2.0.2-4020420240722004"
@@ -8239,9 +8239,9 @@ nth-check@^2.0.1:
     boolbase "^1.0.0"
 
 nwsapi@^2.2.0:
-  version "2.2.13"
-  resolved "https://registry.npmmirror.com/nwsapi/-/nwsapi-2.2.13.tgz#e56b4e98960e7a040e5474536587e599c4ff4655"
-  integrity sha512-cTGB9ptp9dY9A5VbMSe7fQBcl/tt22Vcqdq8+eN93rblOuE0aCFu4aZ2vMwct/2t+lFnosm8RkQW1I0Omb1UtQ==
+  version "2.2.16"
+  resolved "https://registry.npmmirror.com/nwsapi/-/nwsapi-2.2.16.tgz#177760bba02c351df1d2644e220c31dfec8cdb43"
+  integrity sha512-F1I/bimDpj3ncaNDhfyMWuFqmQDBwDB0Fogc2qpL3BWvkQteFD/8BzWuIRl83rq0DXfm8SGt/HFhLXZyljTXcQ==
 
 oauth-sign@~0.9.0:
   version "0.9.0"

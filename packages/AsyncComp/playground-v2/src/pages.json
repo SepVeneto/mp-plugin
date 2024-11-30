@@ -6,24 +6,19 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
-			},
-      "componentPlaceholder": {
-        "module-a": "view"
-      },
-      "usingComponents": {
-        "module-a": "/pages/moduleA/entry"
-      }
+				"navigationBarTitleText": "uni-app",
+        "componentPlaceholder": {
+          "design-wrap": "view"
+        }
+			}
 		}
 	],
   "subPackages": [
     {
-      "root": "pages/moduleA",
-      "pages": [
-        {
-          "path": "entry"
-        }
-      ]
+      "root": "design",
+      "pages": [{
+        "path": "index"
+      }]
     },
     {
       "root": "pages/moduleB",

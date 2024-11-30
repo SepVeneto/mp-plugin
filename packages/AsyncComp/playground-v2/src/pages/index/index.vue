@@ -1,12 +1,16 @@
 <template>
 	<view class="content">
-    <module-a />
-    <u-button @click="handleB">分包B</u-button>
+    <DesignWrap type="entry" />
+    <DesignWrap type="button" />
 	</view>
 </template>
 
 <script>
+import DesignWrap from '@/design/wrap.vue'
 	export default {
+    components: {
+      DesignWrap,
+    },
 		data() {
 			return {
 				title: 'Hello'
