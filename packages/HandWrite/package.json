@@ -1,0 +1,41 @@
+{
+  "name": "@sepveneto/uniapp-plugin-handwrite",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "scripts",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "default": "./dist/cjs/index.js",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./loader": {
+      "default": "./dist/cjs/loader.js",
+      "import": "./dist/es/loader.js",
+      "require": "./dist/cjs/loader.js"
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "release": "bumpp -t scan-code@",
+    "build": "rollup --config rollup.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": ">= 2.6.14 < 2.7"
+  },
+  "devDependencies": {
+    "rollup": "^4.24.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-vue": "^5.0.0",
+    "stats.js": "^0.17.0",
+    "vue": ">= 2.6.14 < 2.7"
+  }
+}
