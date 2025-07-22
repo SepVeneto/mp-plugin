@@ -1,19 +1,13 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-    <ScanCode />
-		<view @click="handleClick">
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+	<HandWrite themeColor="#F73E65" name="测试" @success="handleSubmit" />
 </template>
 
 <script>
-import ScanCode from '@sepveneto/uniapp-plugin-handwrite'
-console.log(ScanCode)
+import HandWrite from '@sepveneto/uniapp-plugin-handwrite'
+console.log(HandWrite)
 	export default {
     components: {
-      ScanCode,
+      HandWrite,
     },
 		data() {
 			return {
@@ -22,17 +16,12 @@ console.log(ScanCode)
 		},
 		onLoad() {
       console.log('trigger load')
-      debugger
+      // debugger
 		},
 		methods: {
-      handleClick() {
-        uni.scanCode({
-          scanType: ['barCode'],
-          success(res) {
-            console.log(res)
-          }
-        })
-      }
+      handleSubmit(image) {
+				console.log(image)
+			}
 		}
 	}
 </script>
