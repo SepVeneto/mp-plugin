@@ -1,5 +1,5 @@
 <template>
-  <view>1</view>
+  <view class="label">13241</view>
 </template>
 
 <script>
@@ -8,42 +8,6 @@ const SPEED = 100
 const HEIGHT = 10
 let pts = 0
 let checkCount = 0
-
-const workerScript = `
-const STATIC_JS = 'https://registry.npmmirror.com/zxing-wasm/1.2.12/files/dist/iife/full/index.js'
-self.importScripts('UNIAPP_PLUGIN_SCANCODE_REMOTE_JS' || STATIC_JS)
-
-ZXingWASM.getZXingModule({
-  locateFile: (path, prefix) => {
-    if (path.endsWith('.wasm')) {
-      const url = self.location.origin + '/' + path
-      return 'UNIAPP_PLUGIN_SCANCODE_REMOTE_WASM' || url
-    }
-    return prefix + path
-  }
-})
-
-self.onmessage = (evt) => {
-  const { type, data, options } = evt.data
-  switch (type) {
-    case 'scan':
-      ZXingWASM.readBarcodesFromImageData(data, options).then(res => {
-        if (res.length === 0) {
-          return
-        }
-        self.postMessage({ type: 'success', data: res })
-      })
-      break
-    case 'file':
-      ZXingWASM.readBarcodesFromImageFile(data, options).then(res => {
-        if (res.length === 0) {
-          return
-        }
-        self.postMessage({ type: 'success', data: res })
-      })
-  }
-}
-`
 
 const IconClose = 'data:image/svg+xml;charset=utf-8;base64,PHN2ZyB0PSIxNzI4MzQ5MzIwNjIyIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjU4NjUiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cGF0aCBkPSJNNTEyIDQ1MS42NjkzMzNMNDIxLjUwNCAzNjEuMTMwNjY3QTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDAgMzYxLjEzMDY2NyA0MjEuNTQ2NjY3TDQ1MS42NjkzMzMgNTEybC05MC41Mzg2NjYgOTAuNDk2YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDAgNjAuMzczMzMzIDYwLjM3MzMzM0w1MTIgNTcyLjMzMDY2N2w5MC40OTYgOTAuNTM4NjY2YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDAgNjAuMzczMzMzLTYwLjM3MzMzM0w1NzIuMzMwNjY3IDUxMmw5MC41Mzg2NjYtOTAuNDk2YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAxIDAtNjAuMzczMzMzLTYwLjM3MzMzM0w1MTIgNDUxLjY2OTMzM3ogbS0yNzEuNTMwNjY3IDMzMS44NjEzMzRBMzg0IDM4NCAwIDEgMSA3ODMuNTMwNjY3IDI0MC40NjkzMzMgMzg0IDM4NCAwIDAgMSAyNDAuNDY5MzMzIDc4My41MzA2Njd6IiBmaWxsPSIjYmZiZmJmIiBwLWlkPSI1ODY2Ij48L3BhdGg+PC9zdmc+'
 
@@ -67,22 +31,22 @@ export default {
       lock: false,
     }
   },
-  onLoad(options) {
-    const blob = new Blob([workerScript], { type: 'application/javascript'})
-    this.worker = new Worker(URL.createObjectURL(blob))
-    this.worker.onmessage = (evt) => {
-      const { type, data } = evt.data
-      switch (type) {
-        case 'success':
-          this.emitRes(data[0])
-          break
-      }
-    }
+  // onLoad(options) {
+  //   const blob = new Blob([workerScript], { type: 'application/javascript'})
+  //   this.worker = new Worker(URL.createObjectURL(blob))
+  //   this.worker.onmessage = (evt) => {
+  //     const { type, data } = evt.data
+  //     switch (type) {
+  //       case 'success':
+  //         this.emitRes(data[0])
+  //         break
+  //     }
+  //   }
 
-    this.normalizeOptions(options)
+  //   this.normalizeOptions(options)
 
-    this.event = this.getOpenerEventChannel();
-  },
+  //   this.event = this.getOpenerEventChannel();
+  // },
   mounted() {
     // this.stats = new Stats()
     // document.body.appendChild(this.stats.dom)
@@ -293,3 +257,9 @@ function transition(x) {
   return 0.5 * (1 - Math.cos(Math.PI * x))
 }
 </script>
+
+<style lang="css" scoped>
+.label {
+  font-size: 100rpx;
+}
+</style>

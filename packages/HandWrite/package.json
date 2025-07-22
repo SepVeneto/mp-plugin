@@ -13,11 +13,6 @@
       "default": "./dist/cjs/index.js",
       "import": "./dist/es/index.js",
       "require": "./dist/cjs/index.js"
-    },
-    "./loader": {
-      "default": "./dist/cjs/loader.js",
-      "import": "./dist/es/loader.js",
-      "require": "./dist/cjs/loader.js"
     }
   },
   "scripts": {

@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
+    <ScanCode />
 		<view @click="handleClick">
 			<text class="title">{{title}}</text>
 		</view>
@@ -8,7 +9,12 @@
 </template>
 
 <script>
+import ScanCode from '@sepveneto/uniapp-plugin-handwrite'
+console.log(ScanCode)
 	export default {
+    components: {
+      ScanCode,
+    },
 		data() {
 			return {
 				title: 'Hello'
