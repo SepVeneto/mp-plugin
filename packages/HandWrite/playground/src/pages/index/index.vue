@@ -1,5 +1,9 @@
 <template>
-	<HandWrite themeColor="#F73E65" name="测试" @success="handleSubmit" />
+	<HandWrite
+    themeColor="#F73E65"
+    name="测试"
+    @success="handleSubmit"
+  />
 </template>
 
 <script>

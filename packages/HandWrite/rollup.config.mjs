@@ -32,11 +32,11 @@ export default defineConfig({
     copy({
       targets: [
         {
-          src: './lib/ScanCode.vue',
+          src: './lib/HandWrite.vue',
           dest: 'dist/cjs',
         },
         {
-          src: './lib/ScanCode.vue',
+          src: './lib/HandWrite.vue',
           dest: 'dist/es',
         },
       ]
