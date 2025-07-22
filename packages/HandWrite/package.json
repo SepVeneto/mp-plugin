@@ -17,7 +17,7 @@
   },
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
-    "release": "bumpp -t scan-code@",
+    "release": "bumpp -t hand-write@",
     "build": "rollup --config rollup.config.mjs"
   },
   "keywords": [],
