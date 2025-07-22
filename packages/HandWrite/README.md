@@ -1,62 +1,54 @@
-## uniapp 扫码扩展
+## uniapp 手写签名
 
 **仅支持vue2**
 
-使uni.scanCode支持h5
-
 ### 安装
 ```shell
-pnpm i @sepveneto/uniapp-plugin-scancode
+pnpm i @sepveneto/uniapp-plugin-handwrite
 ```
 ```shell
-yarn add @sepveneto/uniapp-plugin-scancode
+yarn add @sepveneto/uniapp-plugin-handwrite
 ```
 ```shell
-npm i @sepveneto/uniapp-plugin-scancode
+npm i @sepveneto/uniapp-plugin-handwrite
 ```
 
 ### 使用
-<details>
-<summary>main.js</summary><br>
 
-```js
-import Vue from 'vue'
-// #ifdef H5
-import ScanCode from '@sepveneto/uniapp-plugin-scancode'
-Vue.use(ScanCode)
-// #endif
-```
-<br></details>
+```html
+<template>
+	<HandWrite
+    themeColor="#F73E65"
+    name="测试"
+    @confirm="handleSubmit"
+  />
+</template>
 
-由于使用后是直接在uni上创建一个`scanCode`，因此对于多平台的项目，需要通过条件编码来兼容。
+<script setup>
+import HandWrite from '@sepveneto/uniapp-plugin-handwrite'
 
-<details>
-<summary>vue.config.js</summary><br>
-
-```js
-module.exports = {
-  chainWebpack: config => {
-    config.module
-      .rule('uniapp-pages')
-      .test(/\.js/)
-      .use('@sepveneto/uniapp-plugin-scancode')
-      .loader('@sepveneto/uniapp-plugin-scancode/loader')
-      .options({
-        remote: {
-          js: 'https://cdn.jsdelivr.net/npm/zxing-wasm@1.2.12/dist/iife/full/index.js',
-          wasm: 'https://registry.npmmirror.com/zxing-wasm/1.2.12/files/dist/full/zxing_full.wasm'
-        }
-      })
-  }
+function handleSubmit(image) {
+  console.log(image)
 }
+</script>
 ```
-<br></details>
-
 
 ### 参数说明
 
-https://uniapp.dcloud.net.cn/api/system/barcode.html#scancode
+| 名称 | 类型 | 必填 | 默认值 | 说明 |
+| :--- | :--- | :-- | :---- | :--- |
+| width | number | ❌ | 屏幕宽度 | 画布的宽度,默认是竖屏时可用窗口的度 |
+| height | number | ❌ | 屏幕高度 | 画布的高度,默认是竖屏时可用窗口的高度 |
+| themeColor | string | ❌ | #000000 | 主题色 |
+| name | string | ❌ | - | 示例文案,同时控制画布底层的描边 |
+| font | string | ❌ | - | 签名及示例的字体 |
 
-仅实现了`onlyFromCamera`, `scanType`和`success`
+### 事件说明
+| 名称 | 说明 |
+| :--- | :--- |
+| confirm | 确认签字 |
 
-其中成功的返回值仅包括`result`和`scanType`
+### 方法说明
+| 名称 | 说明 |
+| :--- | :--- |
+| clear | 清空画布

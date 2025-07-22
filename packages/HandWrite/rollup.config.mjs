@@ -21,7 +21,7 @@ export default defineConfig({
       name: 'watch-custom-files',
       buildStart() {
         // 添加单个文件
-        this.addWatchFile(path.resolve('lib/ScanCode.vue'));
+        this.addWatchFile(path.resolve('lib/HandWrite.vue'));
         
         // 添加整个目录
         // const dataFiles = glob.sync('data/**/*.csv');

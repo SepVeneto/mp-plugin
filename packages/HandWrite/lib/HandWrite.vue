@@ -1,7 +1,7 @@
 <template>
   <view class="section" :style="{'--theme-color': `${themeColor}`, height: `${canvasHight}px`}"> 
     <block v-if="name">
-      <view class="tips">提示：为保障签名通过率请您书写工整 示例<text>{{ name }}</text></view>
+      <view class="tips">提示：为保障签名通过率请您书写工整 示例<text :style="fontStyle">{{ name }}</text></view>
       <canvas :style="{ width: `${canvasWidth}px`, height: `${canvasHight}px` }" type="2d" canvas-id="nameCanvas" id="nameCanvas"></canvas>
     </block>
     <canvas :style="{ width: `${canvasWidth}px`, height: `${canvasHight}px` }" class="mycanvas" canvas-id="mycanvas" type="2d" id="mycanvas" disable-scroll @touchstart="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend"></canvas>
@@ -15,6 +15,10 @@
 <script>
 export default {
   props: {
+    font: {
+      type: Object,
+      default: null,
+    },
     width: {
       type: Number,
       default: null
@@ -34,6 +38,7 @@ export default {
   },
   data() {
     return {
+      fontStyle: '',
       ctx: null,
       canvasObject: null,
       tracks: new Map(),
@@ -50,6 +55,19 @@ export default {
       this.initCanvas(this.name);
     })
   },
+  watch: {
+    font: {
+      handler(font) {
+        if (font) {
+          font.source && uni.loadFontFace(font)
+          this.fontStyle = 'font-family: ' + font.family
+        } else {
+          this.fontStyle = ''
+        }
+      },
+      immediate: true,
+    }
+  },
   methods: {
     // 初始化画布
     initCanvas(name) {
@@ -62,11 +80,8 @@ export default {
       query.select('#nameCanvas')
         .fields({ node: true, size: true })
         .exec((res) => {
-          console.log(res)
           const canvas = res[0].node
-          console.log(canvas, res[0].node, 111)
           const ctx = canvas.getContext('2d')
-          // console.log('canvas', canvas, ctx, 111)
           const dpr = uni.getSystemInfoSync().pixelRatio
           canvas.width = res[0].width * dpr
           canvas.height = res[0].height * dpr
@@ -89,6 +104,7 @@ export default {
       ctx.translate(windowWidth / 2, windowHeight / 2)
       ctx.rotate(Math.PI / 2)
       ctx.setStrokeStyle('#B0B0B0')
+      ctx.font = '0px ' + (this.font.family || 'sans-serif')
       ctx.setFontSize(160)
       ctx.setTextBaseline('middle')
       ctx.setLineDash([10, 10], 150);
@@ -107,13 +123,11 @@ export default {
       .exec((res) => {
         const canvas = res[0].node
         this.canvasObject = canvas;
-        console.log('canvas', this.canvasObject, res[0].node, 111)
         this.ctx = canvas.getContext('2d')
         const dpr = uni.getSystemInfoSync().pixelRatio
         canvas.width = res[0].width * dpr
         canvas.height = res[0].height * dpr
         this.ctx.scale(dpr, dpr)
-        // console.log(this.ctx, 'ctx')
         this.ctx.lineWidth = 4;
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
@@ -166,6 +180,10 @@ export default {
       // #endif
     },
 
+    clear() {
+      this.handleRedo()
+    },
+
     // 清空画板
     handleRedo(){
       this.index = 0
@@ -202,10 +220,9 @@ export default {
         // #endif
         success: function (res){
           let tempFilePath = res.tempFilePath;
-          _this.$emit('success', tempFilePath);
+          _this.$emit('confirm', tempFilePath);
         },
         fail: function (res){
-          console.log(res, 'fail')
           _this.$util.showToast({
             title: '保存失败'
           });
