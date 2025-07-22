@@ -1,3 +1,3 @@
-import ScanCode from "./ScanCode.vue"
+import HandWrite from "./HandWrite.vue"
 
-export default ScanCode
+export default HandWrite
