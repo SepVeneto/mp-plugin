@@ -55,6 +55,14 @@ export default {
       this.initCanvas(this.name);
     })
   },
+  computed: {
+    fontFamily() {
+      if (!this.font) {
+        return 'sans-serif'
+      }
+      return this.font.family
+    }
+  },
   watch: {
     font: {
       handler(font) {
@@ -90,7 +98,7 @@ export default {
           ctx.translate(windowWidth / 2, windowHeight / 2)
           ctx.rotate(Math.PI / 2)
           ctx.strokeStyle = '#B0B0B0'
-          ctx.font = '160px sans-serif'
+          ctx.font = '160px ' + this.fontFamily
           ctx.textBaseline = 'middle'
           ctx.setLineDash([10, 10], 150);
           ctx.lineWidth = 2
@@ -104,7 +112,7 @@ export default {
       ctx.translate(windowWidth / 2, windowHeight / 2)
       ctx.rotate(Math.PI / 2)
       ctx.setStrokeStyle('#B0B0B0')
-      ctx.font = '0px ' + (this.font.family || 'sans-serif')
+      ctx.font = '0px ' + this.fontFamily
       ctx.setFontSize(160)
       ctx.setTextBaseline('middle')
       ctx.setLineDash([10, 10], 150);

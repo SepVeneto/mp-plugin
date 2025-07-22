@@ -2,7 +2,6 @@
 	<HandWrite
     themeColor="#F73E65"
     name="测试"
-    :font="{ family: 'YaHei'}"
     @confirm="handleSubmit"
   />
 </template>

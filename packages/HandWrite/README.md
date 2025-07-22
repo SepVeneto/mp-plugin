@@ -41,7 +41,7 @@ function handleSubmit(image) {
 | height | number | ❌ | 屏幕高度 | 画布的高度,默认是竖屏时可用窗口的高度 |
 | themeColor | string | ❌ | #000000 | 主题色 |
 | name | string | ❌ | - | 示例文案,同时控制画布底层的描边 |
-| font | string | ❌ | - | 签名及示例的字体 |
+| font | [LoadFontFaceOptions](https://uniapp.dcloud.net.cn/api/ui/font.html#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) | ❌ | - | 签名及示例的字体 |
 
 ### 事件说明
 | 名称 | 说明 |
