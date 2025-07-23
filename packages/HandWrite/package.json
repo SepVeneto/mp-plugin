@@ -15,7 +15,7 @@
       "require": "./dist/cjs/index.js"
     },
     "./HandWrite": {
-      "default": "./cjs/HandWrite.vue",
+      "default": "./dist/cjs/HandWrite.vue",
       "import": "./dist/es/HandWrite.vue",
       "require": "./dist/cjs/HandWrite.vue"
     }
