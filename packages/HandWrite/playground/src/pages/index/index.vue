@@ -1,7 +1,7 @@
 <template>
 	<HandWrite
     themeColor="#F73E65"
-    name="测试"
+    tips
     @confirm="handleSubmit"
   />
 </template>
