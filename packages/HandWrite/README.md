@@ -1,7 +1,5 @@
 ## uniapp 手写签名
 
-**仅支持vue2**
-
 ### 安装
 ```shell
 pnpm i @sepveneto/uniapp-plugin-handwrite
@@ -15,23 +13,15 @@ npm i @sepveneto/uniapp-plugin-handwrite
 
 ### 使用
 
-```html
-<template>
-	<HandWrite
-    themeColor="#F73E65"
-    name="测试"
-    @confirm="handleSubmit"
-  />
-</template>
-
-<script setup>
-import HandWrite from '@sepveneto/uniapp-plugin-handwrite'
-
-function handleSubmit(image) {
-  console.log(image)
-}
-</script>
+```json
+  "easycom": {
+    "custom": {
+      "HandWrite": "@sepveneto/uniapp-plugin-handwrite/HandWrite"
+    }
+  },
 ```
+
+#### 小程序
 
 ### 参数说明
 
