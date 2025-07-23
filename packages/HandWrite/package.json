@@ -13,6 +13,11 @@
       "default": "./dist/cjs/index.js",
       "import": "./dist/es/index.js",
       "require": "./dist/cjs/index.js"
+    },
+    "./HandWrite": {
+      "default": "./cjs/HandWrite.vue",
+      "import": "./dist/es/HandWrite.vue",
+      "require": "./dist/cjs/HandWrite.vue"
     }
   },
   "scripts": {
