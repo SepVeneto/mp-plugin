@@ -39,6 +39,8 @@
 </template>
 
 <script>
+// 在小程序中canvas的实例不能被代理,也不能从上下文中获取
+let canvas
 export default {
   props: {
     tips: [Boolean, String],
@@ -68,7 +70,6 @@ export default {
     return {
       fontStyle: '',
       ctx: null,
-      canvasObject: null,
       tracks: new Map(),
       index: 0,
     }
@@ -121,8 +122,7 @@ export default {
         query.select('#' + canvasId)
           .fields({ node: true, size: true })
           .exec((res) => {
-            const canvas = res[0].node
-            this.canvasObject = canvas
+            canvas = res[0].node
             const dpr = uni.getSystemInfoSync().pixelRatio
             canvas.width = res[0].width * dpr
             canvas.height = res[0].height * dpr
@@ -235,7 +235,7 @@ export default {
       }
       uni.canvasToTempFilePath({
         // #ifdef MP-WEIXIN
-        canvas: _this.canvasObject,
+        canvas,
         // #endif
         // #ifdef H5
         canvasId: 'mycanvas',
@@ -246,8 +246,9 @@ export default {
         },
         fail: function (res){
           console.error(res)
-          _this.$util.showToast({
-            title: '保存失败'
+          uni.showToast({
+            title: '保存失败',
+            icon: 'fail',
           });
         }
       })
