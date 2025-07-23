@@ -117,16 +117,18 @@ export default {
     async getCanvasCtx(canvasId) {
       const ctx = await new Promise((resolve) => {
         // #ifdef MP-WEIXIN
-        const query = uni.createSelectorQuery()
+        const query = uni.createSelectorQuery().in(this)
         query.select('#' + canvasId)
           .fields({ node: true, size: true })
           .exec((res) => {
             const canvas = res[0].node
+            this.canvasObject = canvas
             const dpr = uni.getSystemInfoSync().pixelRatio
             canvas.width = res[0].width * dpr
             canvas.height = res[0].height * dpr
 
             const ctx = canvas.getContext('2d')
+            ctx.scale(dpr, dpr)
             resolve(ctx)
           })
         // #endif
@@ -208,7 +210,7 @@ export default {
     handleRedo(){
       this.index = 0
       // #ifdef MP-WEIXIN
-      this.ctx.clearRect(0, 0, this.canvasObject.width, this.canvasObject.height)
+      this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHight)
       // #endif
       this.draw()
     },
