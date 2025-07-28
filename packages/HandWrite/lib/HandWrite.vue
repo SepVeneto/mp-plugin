@@ -49,6 +49,10 @@ export default {
       type: Object,
       default: null,
     },
+    fontSize: {
+      type: Number,
+      default: 160
+    },
     width: {
       type: Number,
       default: null
@@ -147,7 +151,7 @@ export default {
       ctx.rotate(Math.PI / 2)
       ctx.setStrokeStyle('#B0B0B0')
       ctx.font = '0px ' + this.fontFamily
-      ctx.setFontSize(160)
+      ctx.setFontSize(this.fontSize)
       ctx.setTextBaseline('middle')
       ctx.setLineDash([10, 10], 150);
       ctx.setLineWidth(2)
