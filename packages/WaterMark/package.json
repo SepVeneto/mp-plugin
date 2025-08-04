@@ -1,0 +1,113 @@
+{
+  "name": "@sepveneto/plugin-mp-watermark",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Register global imports on demand for Vite and Webpack",
+  "license": "MIT",
+  "homepage": "https://github.com/SepVeneto/mp-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SepVeneto/mp-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SepVeneto/mp-plugin/issues"
+  },
+  "keywords": [
+    "unplugin",
+    "vite",
+    "webpack",
+    "rollup",
+    "transform"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.js"
+    },
+    "./loader": {
+      "types": "./dist/loader.d.ts",
+      "require": "./dist/loader.cjs",
+      "import": "./dist/loader.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
+    },
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.js"
+    },
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "require": "./dist/esbuild.cjs",
+      "import": "./dist/esbuild.js"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "require": "./dist/nuxt.cjs",
+      "import": "./dist/nuxt.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.js"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/webpack.cjs",
+  "module": "dist/webpack.js",
+  "types": "dist/webpack.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src",
+    "build:fix": "esno scripts/postbuild.ts",
+    "lint": "eslint .",
+    "play": "npm -C playground run dev",
+    "play:v2": "npm -C playground-v2 run dev:mp-weixin",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp -t router-view@",
+    "start": "esno src/index.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "debug": "^4.3.4",
+    "jsonc-parser": "^3.2.0",
+    "node-html-parser": "^6.1.4",
+    "unplugin": "^1.4.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.33.1",
+    "@dcloudio/types": "^3.0.17",
+    "@types/debug": "^4.1.7",
+    "@types/node": "^18.11.13",
+    "bumpp": "^8.2.1",
+    "chalk": "^5.2.0",
+    "eslint": "^8.29.0",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.12",
+    "local-pkg": "^0.5.0",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.7.3",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0",
+    "vitest": "^0.25.7",
+    "webpack": "^5.75.0"
+  }
+}
