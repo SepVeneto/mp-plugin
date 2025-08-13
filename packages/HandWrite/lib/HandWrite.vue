@@ -230,8 +230,7 @@ export default {
     // 确认
     async handleGen(){
       let _this = this;
-      const tracks = Array.from(this.tracks.values())
-      if(this.index === 0 || (this.index === 1 && tracks[0].length < 2)){
+      if(this.index === 0){
         uni.showToast({
           title:'签名必填',
           icon:'none'
