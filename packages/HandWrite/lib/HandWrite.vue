@@ -157,7 +157,9 @@ export default {
       ctx.setLineWidth(2)
       const width = ctx.measureText(_name).width;
       ctx.strokeText(_name, -width / 2, 0);
+      // #ifdef H5
       ctx.draw()
+      // #endif
     },
     async initMyCanvas() {
       const ctx = await this.getCanvasCtx('mycanvas')
@@ -165,6 +167,11 @@ export default {
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       this.ctx = ctx
+      ctx.fillStyle = '#fff'
+      ctx.fillRect(0, 0, this.canvasWidth, this.canvasHight)
+      // #ifdef H5
+      ctx.draw()
+      // #endif
     },
 
 
@@ -213,9 +220,9 @@ export default {
     // 清空画板
     handleRedo(){
       this.index = 0
-      // #ifdef MP-WEIXIN
       this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHight)
-      // #endif
+      this.ctx.fillStyle = '#fff'
+      this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHight)
       this.draw()
     },
 
@@ -330,7 +337,7 @@ export default {
   top: 0;
   right: 0;
   &.area-limit {
-    border: 1px dashed #C8C8C8;
+    outline: 1px dashed #C8C8C8;
     border-radius: 14rpx;
     top: 40rpx;
     right: 100rpx;
