@@ -1,7 +1,9 @@
 import { parse, compileTemplate } from '@vue/compiler-sfc'
+import * as path from 'node:path'
 
 export function isAppVue(id: string) {
-  return id.endsWith('App.vue')
+  const filename = path.basename(id)
+  return filename === 'App.vue'
 }
 
 export function isEntryPage(id: string, entryPages: string[]) {
