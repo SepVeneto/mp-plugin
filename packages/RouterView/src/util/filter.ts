@@ -2,8 +2,13 @@ import { parse, compileTemplate } from '@vue/compiler-sfc'
 import * as path from 'node:path'
 
 export function isAppVue(id: string) {
-  const filename = path.basename(id)
-  return filename === 'App.vue'
+  const target = process.env.UNI_INPUT_DIR
+    ? path.resolve(process.env.UNI_INPUT_DIR, 'App.vue')
+    : path.resolve(process.cwd(), 'src', 'App.vue')
+  if (id === target) {
+    console.log('isAppVue', id, target)
+  }
+  return id === target
 }
 
 export function isEntryPage(id: string, entryPages: string[]) {

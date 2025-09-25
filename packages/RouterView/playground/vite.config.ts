@@ -9,7 +9,11 @@ export default defineConfig({
   build: {
     minify: false,
   },
-  plugins: [Inspect(), Unplugin({
+  plugins: [
+    Inspect(),
+    Unplugin({
     log: 'log',
-  }) as Plugin, uni()],
+  }) as Plugin,
+  uni()
+],
 })

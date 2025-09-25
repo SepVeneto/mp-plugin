@@ -84,6 +84,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@vue/compiler-sfc": "~3.4",
     "colors": "^1.4.0",
     "debug": "^4.3.4",
     "jsonc-parser": "^3.2.0",
