@@ -23,7 +23,7 @@ let footer = ''
 let header = ''
 let logLevel: Level = 'error'
 
-export function parseJson(str: string): PageJSON {
+export function parseJson(str: string): PageJSON{
   return parse(str)
 }
 
@@ -62,6 +62,7 @@ export function addToFooter(code: string, footer: string) {
   return code.replace(/(\s*)(<\/template>)(?!(([\s\S]*)(<\/template>)))/, p => footer + p)
 }
 
+const pageMap = new Map<string, Record<string, any>>()
 export function getPages(collectMode: Options['collect']) {
   // 找不到pages.json的话无法开始编译，所以不考虑文件不存在的情况
   const jsonStr = fs.readFileSync(path.resolve(INPUT_DIR, 'pages.json'), 'utf-8')
@@ -69,7 +70,7 @@ export function getPages(collectMode: Options['collect']) {
   const pagesJson = parseJson(jsonStr)
   const { pages, subPackages = [] } = pagesJson
   const entryList = [...collectEntry(collectMode, pages), ...collectEntry(collectMode, subPackages)]
-  return entryList
+  return { entryList, pageMap }
 }
 
 function collectEntry(collectMode: Options['collect'], json: Page[], root?: string): string[]
@@ -87,6 +88,7 @@ function collectEntry(collectMode: Options['collect'], json: { root: string; pag
         return
       }
       const _path = path.resolve(INPUT_DIR, `${root}${root ? '/' : ''}${item.path}`)
+      pageMap.set(_path, item)
       if (collectMode && typeof collectMode === 'boolean' && !item['ROUTER_VIEW_EXCLUDE']) {
         entryList.push(_path)
       } else if (typeof collectMode === 'string' && item[collectMode]) {

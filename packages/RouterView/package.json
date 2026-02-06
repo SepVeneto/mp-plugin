@@ -1,7 +1,7 @@
 {
   "name": "@sepveneto/plugin-mp-router-view",
   "type": "module",
-  "version": "0.4.4",
+  "version": "0.5.0-beta.6",
   "description": "Register global imports on demand for Vite and Webpack",
   "license": "MIT",
   "homepage": "https://github.com/SepVeneto/mp-plugin#readme",
@@ -24,6 +24,11 @@
       "types": "./dist/webpack.d.ts",
       "require": "./dist/webpack.cjs",
       "import": "./dist/webpack.js"
+    },
+    "./helper": {
+      "types": "./dist/helper/index.d.ts",
+      "require": "./dist/helper/index.cjs",
+      "import": "./dist/helper/index.js"
     },
     "./loader": {
       "types": "./dist/loader.d.ts",
